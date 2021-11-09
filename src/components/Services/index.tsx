@@ -9,7 +9,7 @@ export function Services() {
 		<Section title="Serviços" background="greyBackground">
 			<div className={styles.container}>
 				<div className={styles.box}>
-					<h4>Gestão Pública</h4>
+					<h3>Gestão Pública</h3>
 					<Accordion className={styles.accordion}>
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
@@ -36,7 +36,7 @@ export function Services() {
 				</div>
 
 				<div className={styles.box}>
-					<h4>Gestão Empresarial</h4>
+					<h3>Gestão Empresarial</h3>
 					<Accordion className={styles.accordion} disableGutters>
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
@@ -67,7 +67,7 @@ export function Services() {
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
 							aria-controls="panel2a-content"
-							id="panel2a-header"
+							id="panel3a-header"
 							sx={{
 								"& .MuiAccordionSummary-expandIconWrapper": {
 									svg: {
@@ -78,7 +78,7 @@ export function Services() {
 							}}
 						>
 							<Typography className={styles.typography}>
-								Diagnósticos e Estratégias Empresariais
+								Organização, Desenvolvimento e Sustentabilidade
 							</Typography>
 						</AccordionSummary>
 						<AccordionDetails className={styles.accordionDetails}>

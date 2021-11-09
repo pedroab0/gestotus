@@ -8,6 +8,7 @@ interface SectionProps {
 	button?: boolean;
 	children?: ReactNode;
 	background: string;
+	link?: string;
 }
 
 export function Section(props: SectionProps) {
@@ -16,7 +17,11 @@ export function Section(props: SectionProps) {
 			<h2>{props.title}</h2>
 			{!props.subtitle ? "" : <p>{props.subtitle}</p>}
 			{props.children}
-			{props.button ? <Button buttonStyle="simple" label="Saiba mais" /> : ""}
+			{props.button ? (
+				<Button link={props.link} buttonStyle="simple" label="Saiba mais" />
+			) : (
+				""
+			)}
 		</section>
 	);
 }

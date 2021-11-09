@@ -1,6 +1,4 @@
-import type { NextPage, GetStaticProps } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import type { GetStaticProps } from "next";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 
@@ -16,7 +14,6 @@ import { DrLicitacao } from "../components/DrLicitacao";
 import { Services } from "../components/Services";
 import { Card } from "../components/atoms/Card";
 import { Section } from "../components/atoms/Section";
-import { Header } from "../components/Header";
 import { api } from "../services/api";
 
 import styles from "./home.module.scss";
@@ -54,7 +51,6 @@ interface HomeProps {
 export default function Home({ courses, posts, parceiros }: HomeProps) {
 	return (
 		<>
-			<Header />
 			<Services />
 			<DrLicitacao />
 			<main>
@@ -107,8 +103,6 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 						}}
 						centeredSlides={true}
 						loop={true}
-						onSlideChange={() => console.log("slide change")}
-						onSwiper={(swiper) => console.log(swiper)}
 						autoplay={{
 							delay: 2500,
 							disableOnInteraction: false,
