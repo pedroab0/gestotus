@@ -1,7 +1,4 @@
 .button {
-	margin-right: auto;
-	margin-left: auto;
-
 	text-align: center;
 	text-decoration: none;
 	border: none;
@@ -10,6 +7,11 @@
 
 	background: #333333;
 	color: #ffffff;
+
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2rem;
 
 	position: relative;
 	display: inline-block;
@@ -62,8 +64,14 @@
 
 .simple {
 	@extend .button;
-	margin-top: 3.2rem;
-	padding: 0.8rem 6rem;
+	margin: 3.2rem 0;
+	padding: 1.2rem 6rem;
+	border-radius: 0.6rem;
+}
+
+.submit {
+	@extend .button;
+	padding: 0.8rem 2rem;
 	border-radius: 0.6rem;
 }
 
@@ -74,8 +82,27 @@
 	border-radius: 0rem 0rem 1.2rem 1.2rem;
 }
 
-.submit {
-	@extend .button;
-	padding: 0.8rem 2rem;
-	border-radius: 0.6rem;
+.disabled {
+	background-color: #c4c4c4;
+	color: #4d4c4e;
+
+	width: 100%;
+	padding: 1.2rem 2rem;
+	border-radius: 0rem 0rem 1.2rem 1.2rem;
+
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	overflow: hidden;
+	cursor: not-allowed;
+
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2rem;
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	box-shadow: 0 0 1px rgb(0 0 0 / 0%);
 }

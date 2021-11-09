@@ -14,29 +14,29 @@ import styles from "./styles.module.scss";
 
 export function Footer() {
 	return (
-		<div className={styles.container}>
+		<footer className={styles.container}>
 			<div className={styles.logo}>
 				<Image src="/logo-transparent.png" height={75} width={230} alt="Gestotus" />
 
 				<p>Gestotus, inovação e inspiração !</p>
 
 				<div className={styles.box}>
-					<a href="#">
+					<a href="https://www.facebook.com/gestotusconsultoria">
 						<div className={styles.facebook}>
 							<FaFacebookF />
 						</div>
 					</a>
-					<a href="#">
+					<a href="https://www.linkedin.com/company/gestotus-consultoria/">
 						<div className={styles.linkedin}>
 							<FaLinkedinIn />
 						</div>
 					</a>
-					<a href="#">
+					<a href="https://twitter.com/gestotus">
 						<div className={styles.twitter}>
 							<FaTwitter />
 						</div>
 					</a>
-					<a href="#">
+					<a href="https://www.instagram.com/gestotus/?hl=pt-br">
 						<div className={styles.instagram}>
 							<FaInstagram />
 						</div>
@@ -47,18 +47,20 @@ export function Footer() {
 			<div className={styles.contact}>
 				<p>Informações para contato</p>
 
-				<li>
-					<FaPhoneAlt />
-					<span>(82)9.9690-4908</span>
-				</li>
-				<li>
-					<FaEnvelope />
-					<span>gestotusconsultoria@gmail.com</span>
-				</li>
-				<li>
-					<FaMapMarkerAlt />
-					<span>Maceió-Al, Brasil</span>
-				</li>
+				<ul>
+					<li>
+						<FaPhoneAlt />
+						<span>(82)9.9690-4908</span>
+					</li>
+					<li>
+						<FaEnvelope />
+						<span>gestotusconsultoria@gmail.com</span>
+					</li>
+					<li>
+						<FaMapMarkerAlt />
+						<span>Maceió-Al, Brasil</span>
+					</li>
+				</ul>
 			</div>
 
 			<div className={styles.form}>
@@ -69,9 +71,9 @@ export function Footer() {
 						<input type="text" placeholder="Assunto" />
 						<textarea name="message" cols={30} rows={4} placeholder="Sua mensagem" />
 					</div>
-					<Button style="submit" submit label="Enviar" />
+					<Button buttonStyle="submit" submit label="Enviar" />
 				</form>
 			</div>
-		</div>
+		</footer>
 	);
 }
