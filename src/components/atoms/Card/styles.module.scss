@@ -9,6 +9,8 @@
 		height: 15rem;
 		object-fit: cover;
 		border-radius: 1.2rem 1.2rem 0 0;
+
+		pointer-events: none;
 	}
 
 	@media (max-width: 768px) {
@@ -56,6 +58,8 @@
 	img {
 		min-height: 15rem;
 		border-radius: 12px;
+
+		pointer-events: fill;
 	}
 }
 

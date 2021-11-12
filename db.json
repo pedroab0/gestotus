@@ -6,7 +6,7 @@
 				"title": "Curso - 1",
 				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
 				"open": true,
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/partners.jpg",
+				"thumbnail": "/partners.jpg",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			},
 			{
@@ -14,7 +14,7 @@
 				"title": "Curso - 2",
 				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
 				"open": true,
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/partners.jpg",
+				"thumbnail": "/partners.jpg",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			},
 			{
@@ -22,8 +22,8 @@
 				"title": "Curso - 3",
 				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
 				"open": false,
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/partners.jpg",
-				"link": "#"
+				"thumbnail": "/partners.jpg",
+				"link": ""
 			}
 		],
 		"posts": [
@@ -32,7 +32,7 @@
 				"title": "Como ter uma boa Gestão Pública",
 				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
 				"autor": "Pedro Barbosa",
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/partners2.jpg",
+				"thumbnail": "/partners2.jpg",
 				"date": "2021-01-22 16:35:40",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			},
@@ -41,7 +41,7 @@
 				"title": "Como ter uma boa Gestão Pública",
 				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
 				"autor": "Pedro Barbosa",
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/partners2.jpg",
+				"thumbnail": "/partners2.jpg",
 				"date": "2021-01-15 13:00:00",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			}
@@ -49,17 +49,17 @@
 		"parceiros": [
 			{
 				"id": "1",
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/fonte-preco-wide.png",
+				"thumbnail": "/fonte-preco-wide.png",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			},
 			{
 				"id": "2",
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/sururutalks.jpg",
+				"thumbnail": "/sururutalks.jpg",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			},
 			{
 				"id": "3",
-				"thumbnail": "https://raw.githubusercontent.com/pedrobarbosa0/gestotus/main/public/licitotus-wide-logo.png",
+				"thumbnail": "/licitotus-wide-logo.png",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			}
 		]

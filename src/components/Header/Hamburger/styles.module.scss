@@ -1,0 +1,94 @@
+.container {
+	display: block;
+	.box {
+		display: inline-block;
+		cursor: pointer;
+		grid-area: hamburger;
+
+		.hamburger {
+			width: 35px;
+			height: 5px;
+			background-color: #323f66;
+			margin: 6px 0;
+			transition: 0.4s;
+		}
+
+		.bar1 {
+			@extend .hamburger;
+			-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+			transform: rotate(-45deg) translate(-9px, 6px);
+		}
+		.bar2 {
+			@extend .hamburger;
+			opacity: 0;
+		}
+		.bar3 {
+			@extend .hamburger;
+			-webkit-transform: rotate(45deg) translate(-8px, -8px);
+			transform: rotate(45deg) translate(-8px, -8px);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		display: none;
+	}
+}
+
+.responsiveMenu {
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	transition: height 0.3s ease-in-out;
+
+	li {
+		visibility: hidden;
+		overflow: hidden;
+	}
+
+	&::before,
+	&::after {
+		visibility: hidden;
+
+		overflow: hidden;
+	}
+}
+
+.responsiveMenuCollapsed {
+	max-height: 14.5rem;
+	height: 13.5rem;
+	overflow: hidden;
+	box-sizing: border-box;
+	transition: height 0.4s ease-in-out;
+
+	grid-area: menu;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			padding: 0.6rem;
+
+			a {
+				font-family: "Montserrat", sans-serif;
+				font-size: 1.6rem;
+				font-weight: 700;
+				line-height: 1.4rem;
+				text-align: center;
+				letter-spacing: 0.1rem;
+				color: #323f66;
+
+				cursor: pointer;
+
+				padding: 0.4rem 0;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		display: none;
+	}
+}

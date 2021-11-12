@@ -1,4 +1,4 @@
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps } from "next";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 
@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 SwiperCore.use([Autoplay, Pagination]);
 
-import { Footer } from "../components/Footer";
 import { DrLicitacao } from "../components/DrLicitacao";
 import { Services } from "../components/Services";
 import { Card } from "../components/atoms/Card";
@@ -17,6 +16,7 @@ import { Section } from "../components/atoms/Section";
 import { api } from "../services/api";
 
 import styles from "./home.module.scss";
+import { Banner } from "../components/Banner";
 
 interface Course {
 	id: string;
@@ -51,6 +51,7 @@ interface HomeProps {
 export default function Home({ courses, posts, parceiros }: HomeProps) {
 	return (
 		<>
+			<Banner />
 			<Services />
 			<DrLicitacao />
 			<main>
@@ -94,7 +95,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 
 				<Section title="Parceiros" background="whiteBackground">
 					<Swiper
-						className={styles.swipperContainer}
+						className={styles.swiperContainer}
 						slidesPerView={1}
 						spaceBetween={0}
 						watchSlidesProgress={true}
@@ -129,12 +130,11 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 					</Swiper>
 				</Section>
 			</main>
-			<Footer />
 		</>
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const { data } = await api.get("home");
 
 	const courses = data.cursos.map((course: Course) => {
@@ -172,10 +172,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return {
 		props: {
-			courses,
-			posts,
-			parceiros,
+			courses: courses,
+			posts: posts,
+			parceiros: parceiros,
 		},
-		revalidate: 60 * 60 * 12,
 	};
 };
