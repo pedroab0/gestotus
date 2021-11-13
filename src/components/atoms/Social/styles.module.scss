@@ -1,0 +1,46 @@
+.box {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.social {
+	width: 3.2rem;
+	height: 3.2rem;
+
+	display: inline-block;
+
+	padding: 0.9rem;
+	margin: 0 0.6rem;
+
+	border-radius: 5rem;
+
+	font-size: 1.4rem;
+	text-align: center;
+
+	color: var(--white);
+
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.facebook {
+	@extend .social;
+	background-color: var(--facebook);
+}
+.linkedin {
+	@extend .social;
+	background-color: var(--linkedin);
+}
+.twitter {
+	@extend .social;
+	background-color: var(--twitter);
+}
+.instagram {
+	@extend .social;
+	background: var(--instagram);
+}
