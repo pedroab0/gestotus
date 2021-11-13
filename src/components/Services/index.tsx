@@ -10,7 +10,7 @@ export function Services() {
 			<div className={styles.container}>
 				<div className={styles.box}>
 					<h3>Gestão Pública</h3>
-					<Accordion className={styles.accordion}>
+					<Accordion sx={{ boxShadow: "unset" }}>
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
 							aria-controls="panel1a-content"
@@ -24,9 +24,23 @@ export function Services() {
 								},
 							}}
 						>
-							<Typography className={styles.typography}>Assessoria</Typography>
+							<Typography
+								sx={{
+									fontFamily: "Montserrat",
+									fontSize: 18,
+									fontWeight: 500,
+								}}
+							>
+								Assessoria
+							</Typography>
 						</AccordionSummary>
-						<AccordionDetails className={styles.accordionDetails}>
+						<AccordionDetails
+							sx={{
+								backgroundColor: "#ecedec",
+								padding: "8px 16px 16px",
+								fontFamily: "Montserrat, sans-serif",
+							}}
+						>
 							<Typography>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
 								malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -37,7 +51,7 @@ export function Services() {
 
 				<div className={styles.box}>
 					<h3>Gestão Empresarial</h3>
-					<Accordion className={styles.accordion} disableGutters>
+					<Accordion sx={{ boxShadow: "unset" }} disableGutters>
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
 							aria-controls="panel2a-content"
@@ -51,11 +65,23 @@ export function Services() {
 								},
 							}}
 						>
-							<Typography className={styles.typography}>
+							<Typography
+								sx={{
+									fontFamily: "Montserrat",
+									fontSize: 18,
+									fontWeight: 500,
+								}}
+							>
 								Diagnósticos e Estratégias Empresariais
 							</Typography>
 						</AccordionSummary>
-						<AccordionDetails className={styles.accordionDetails}>
+						<AccordionDetails
+							sx={{
+								backgroundColor: "#ecedec",
+								padding: "8px 16px 16px",
+								fontFamily: "Montserrat, sans-serif",
+							}}
+						>
 							<Typography>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
 								malesuada lacus ex, sit amet blandit leo lobortis eget.
@@ -63,7 +89,7 @@ export function Services() {
 						</AccordionDetails>
 					</Accordion>
 
-					<Accordion className={styles.accordion} disableGutters>
+					<Accordion sx={{ boxShadow: "unset" }} disableGutters>
 						<AccordionSummary
 							expandIcon={<MdExpandMore />}
 							aria-controls="panel2a-content"
@@ -77,11 +103,23 @@ export function Services() {
 								},
 							}}
 						>
-							<Typography className={styles.typography}>
+							<Typography
+								sx={{
+									fontFamily: "Montserrat",
+									fontSize: 18,
+									fontWeight: 500,
+								}}
+							>
 								Organização, Desenvolvimento e Sustentabilidade
 							</Typography>
 						</AccordionSummary>
-						<AccordionDetails className={styles.accordionDetails}>
+						<AccordionDetails
+							sx={{
+								backgroundColor: "#ecedec",
+								padding: "8px 16px 16px",
+								fontFamily: "Montserrat, sans-serif",
+							}}
+						>
 							<Typography>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
 								malesuada lacus ex, sit amet blandit leo lobortis eget.
