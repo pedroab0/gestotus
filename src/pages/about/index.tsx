@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 
 import { Section } from "../../components/atoms/Section";
+import { Social } from "../../components/atoms/Social";
 import { api } from "../../services/api";
 
 import styles from "./styles.module.scss";
@@ -31,6 +32,7 @@ export default function About({ about, members }: AboutProps) {
 					<div className={styles.text}>
 						<h3>QUEM SOMOS</h3>
 						<p>{about.text}</p>
+						<Social justify="left" />
 					</div>
 					<div className={styles.image}>
 						<Image
