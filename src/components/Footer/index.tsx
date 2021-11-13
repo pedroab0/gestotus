@@ -1,15 +1,8 @@
 import Image from "next/image";
-import {
-	FaFacebookF,
-	FaLinkedinIn,
-	FaTwitter,
-	FaInstagram,
-	FaPhoneAlt,
-	FaEnvelope,
-	FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 import { Button } from "../atoms/Button";
+import { Social } from "../atoms/Social";
 import styles from "./styles.module.scss";
 
 export function Footer() {
@@ -20,28 +13,7 @@ export function Footer() {
 
 				<p>Gestotus, inovação e inspiração !</p>
 
-				<div className={styles.box}>
-					<a href="https://www.facebook.com/gestotusconsultoria">
-						<div className={styles.facebook}>
-							<FaFacebookF />
-						</div>
-					</a>
-					<a href="https://www.linkedin.com/company/gestotus-consultoria/">
-						<div className={styles.linkedin}>
-							<FaLinkedinIn />
-						</div>
-					</a>
-					<a href="https://twitter.com/gestotus">
-						<div className={styles.twitter}>
-							<FaTwitter />
-						</div>
-					</a>
-					<a href="https://www.instagram.com/gestotus/?hl=pt-br">
-						<div className={styles.instagram}>
-							<FaInstagram />
-						</div>
-					</a>
-				</div>
+				<Social />
 			</div>
 
 			<div className={styles.contact}>
