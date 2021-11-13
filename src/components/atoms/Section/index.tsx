@@ -14,7 +14,7 @@ interface SectionProps {
 export function Section(props: SectionProps) {
 	return (
 		<section className={styles[props.background]}>
-			<h2>{props.title}</h2>
+			{props.title ? <h2>{props.title}</h2> : ""}
 			{!props.subtitle ? "" : <p>{props.subtitle}</p>}
 			{props.children}
 			{props.button ? (
