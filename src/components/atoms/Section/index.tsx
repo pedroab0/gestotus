@@ -3,7 +3,7 @@ import { Button } from "../Button";
 import styles from "./styles.module.scss";
 
 interface SectionProps {
-	title: string;
+	title?: string;
 	subtitle?: string;
 	button?: boolean;
 	children?: ReactNode;

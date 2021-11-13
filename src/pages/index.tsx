@@ -26,6 +26,7 @@ interface Course {
 	thumbnail: string;
 	link: string;
 }
+
 interface Post {
 	id: string;
 	title: string;
