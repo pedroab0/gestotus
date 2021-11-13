@@ -68,5 +68,56 @@
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			}
 		]
+	},
+
+	"about": {
+		"about": {
+			"text": "A GESTOTUS Consultoria, Assessoria e Treinamento criada em 2017, atua em serviços de consultoria, assessoria e capacitação voltados para gestão pública e empresarial, com expertise em interpretação, elaboração, gestão, execução e prestação de contas de editais; diagnóstico, pesquisa e mapeamento de vocação produtiva; construção de cenários para o desenvolvimento local; elaboração e monitoramento de indicadores; modelagem de negócios locais; gestão de contratos, instrução e fluxo processual; desenho/estrutura de Lei Delegada; licitação; gestão, capacitação e desenvolvimento de compras públicas; diagnóstico e planejamento empresarial.",
+			"image": "/members.png"
+		},
+		"members": [
+			{
+				"name": "Tatyana Lima",
+				"role": "Sócia Administrativa",
+				"description": "Economista, docente, consultora nas áreas de inovação e diagnóstico e estratégia empresarial, com experiência na elaboração, gestão, execução e prestação de contas de projetos empresariais e públicos.",
+				"thumbnail": "/tatyanalima.jpeg"
+			},
+			{
+				"name": "João Geraldo",
+				"role": "Sócio Administrativo",
+				"description": "Administrador, docente, consultor em desenvolvimento organizacional, planos de negócios, planos tecnológicos, científicos, sustentáveis e de inovação para setor público e empresarial.",
+				"thumbnail": "/tatyanalima.jpeg"
+			},
+			{
+				"name": "Chico Rosário",
+				"role": "Sócio",
+				"description": "Economista de empresas, docente, pesquisador, designer de negócios, consultor nas áreas de inovação, modelagem de negócios e pesquisa de mercado.",
+				"thumbnail": "/tatyanalima.jpeg"
+			},
+			{
+				"name": "Rúbia Barbalho",
+				"role": "Sócia",
+				"description": "Pedagoga, consultora com experiências nas áreas de compras públicas rurais, PNAE, negócios no campo; apicultura; desenvolvimento territorial e análise de mercado para negócios.",
+				"thumbnail": "/tatyanalima.jpeg"
+			},
+			{
+				"name": "Dawison Calheiros",
+				"role": "Sócio",
+				"description": "Administrador, docente, consultor empresarial nas áreas de licitações, contratos, compras públicas, Políticas públicas e planejamento estratégico.",
+				"thumbnail": "/dawison.jpeg"
+			},
+			{
+				"name": "Dayse Cahet",
+				"role": "Sócia",
+				"description": "Administradora, consultora e assessora parlamentar. Com experiência em convênios, prestação de contas, compras públicas, contratos, licitação, análise de editais e instrumentalização de processos.",
+				"thumbnail": "/daysecahet.jpeg"
+			},
+			{
+				"name": "Mell Bezerra",
+				"role": "Sócia",
+				"description": "Gestora Pública e Turismóloga, consultora de Turismo, Desenvolvimento Sustentável, Gestão de Empresas e Estratégia de Negócios. Com experiência em elaboração de Plano de Desenvolvimento Municipal.",
+				"thumbnail": "/mellbezerra.jpeg"
+			}
+		]
 	}
 }

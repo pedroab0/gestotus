@@ -7,7 +7,7 @@ export function Nav() {
 		<nav className={styles.menu}>
 			<ul>
 				<li>
-					<Link href="#home">Home</Link>
+					<Link href="/">Home</Link>
 				</li>
 				<li>
 					<a href="#">Cursos</a>
@@ -16,7 +16,7 @@ export function Nav() {
 					<a href="#">Blog</a>
 				</li>
 				<li>
-					<Link href="#">Sobre nós</Link>
+					<Link href="/about">Sobre nós</Link>
 				</li>
 				<li>
 					<Link href="#">Dr. Licitação</Link>
