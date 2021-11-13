@@ -6,22 +6,23 @@
 			padding: 1.5rem;
 
 			a {
-				font-family: "Montserrat", sans-serif;
+				cursor: pointer;
+				padding: 0.4rem 0;
+
 				font-size: 1.6rem;
 				font-weight: 500;
 				line-height: 1.4rem;
 				text-align: center;
 				letter-spacing: 0.1rem;
-				color: #323f66;
 
-				cursor: pointer;
-
-				padding: 0.4rem 0;
+				color: var(--blue-100);
 
 				&:hover {
-					font-weight: 600;
-					border-bottom: 3px solid #323f66;
 					padding-bottom: 0.4rem;
+
+					border-bottom: 3px solid var(--blue-100);
+
+					font-weight: 600;
 				}
 			}
 		}

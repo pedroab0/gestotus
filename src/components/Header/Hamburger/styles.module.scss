@@ -1,15 +1,21 @@
 .container {
 	display: block;
+
 	.box {
 		display: inline-block;
-		cursor: pointer;
+
 		grid-area: hamburger;
+
+		cursor: pointer;
 
 		.hamburger {
 			width: 35px;
 			height: 5px;
-			background-color: #323f66;
+
 			margin: 6px 0;
+
+			background-color: var(--blue-100);
+
 			transition: 0.4s;
 		}
 
@@ -36,8 +42,10 @@
 
 .responsiveMenu {
 	height: 0;
+
 	overflow: hidden;
 	visibility: hidden;
+
 	transition: height 0.3s ease-in-out;
 
 	li {
@@ -56,34 +64,38 @@
 .responsiveMenuCollapsed {
 	max-height: 14.5rem;
 	height: 13.5rem;
-	overflow: hidden;
-	box-sizing: border-box;
-	transition: height 0.4s ease-in-out;
 
 	grid-area: menu;
+
+	overflow: hidden;
+	box-sizing: border-box;
+
+	transition: height 0.4s ease-in-out;
 
 	ul {
 		display: flex;
 		flex-direction: column;
-		margin: 0 auto;
+
 		justify-content: center;
 		align-items: center;
+
+		margin: 0 auto;
 
 		li {
 			padding: 0.6rem;
 
 			a {
-				font-family: "Montserrat", sans-serif;
+				padding: 0.4rem 0;
+
+				cursor: pointer;
+
 				font-size: 1.6rem;
 				font-weight: 700;
 				line-height: 1.4rem;
 				text-align: center;
 				letter-spacing: 0.1rem;
-				color: #323f66;
 
-				cursor: pointer;
-
-				padding: 0.4rem 0;
+				color: var(--blue-100);
 			}
 		}
 	}

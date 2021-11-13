@@ -3,35 +3,38 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	padding: 4rem 2rem;
 
 	h2 {
-		font-family: "Montserrat", sans-serif;
+		margin-bottom: 1rem;
+
 		font-size: 3.2rem;
 		font-weight: 600;
 		line-height: 4rem;
 		text-align: center;
-		color: #4d4c4e;
-		margin-bottom: 1rem;
+
+		color: var(--grey-400);
 	}
 
 	p {
-		font-family: "Montserrat", sans-serif;
+		margin-bottom: 1rem;
+
 		font-size: 1.8rem;
 		font-weight: 500;
 		line-height: 2rem;
 		text-align: center;
-		color: #4d4c4e;
-		margin-bottom: 1rem;
+
+		color: var(--grey-400);
 	}
 }
 
 .greyBackground {
 	@extend .container;
-	background-color: #f2f3f5;
+	background-color: var(--grey-100);
 }
 
 .whiteBackground {
 	@extend .container;
-	background-color: #ffffff;
+	background-color: var(--white);
 }

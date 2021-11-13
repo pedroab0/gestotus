@@ -1,21 +1,24 @@
 .container {
+	height: 13.5rem;
+	width: 100%;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	background: linear-gradient(to right, #60b6e5 0%, rgba(96, 182, 229, 0.3) 100%);
-
 	margin: 7.5rem 0;
-	height: 13.5rem;
-	width: 100%;
+
+	background: var(--lightBlueGradient);
 
 	img {
 		height: 27.5rem;
 	}
 
 	@media (max-width: 940px) {
-		flex-direction: column;
 		height: 40rem;
+
+		flex-direction: column;
+
 		margin: 0;
 
 		img {
@@ -26,29 +29,29 @@
 
 .texts {
 	max-width: 32rem;
+
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 
 	h3 {
-		font-family: "Montserrat", sans-serif;
+		margin: 0;
+
 		font-size: 2.4rem;
 		font-weight: 700;
 		line-height: 2.9rem;
 		text-align: center;
-		color: #ffffff;
 
-		margin: 0;
+		color: var(--white);
 	}
 
 	p {
-		font-family: "Montserrat", sans-serif;
+		margin-top: 1rem;
 		font-size: 1.6rem;
 		font-weight: 500;
 		line-height: 1.95rem;
 		text-align: center;
-		color: #4d4c4e;
 
-		margin-top: 1rem;
+		color: var(--grey-400);
 	}
 }
