@@ -1,14 +1,17 @@
 .container {
-	background-color: #1f1f1f;
-	text-align: center;
 	width: 100%;
-	margin-top: auto;
 
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 4rem;
+
 	column-gap: 10rem;
+	padding: 4rem;
+
+	margin-top: auto;
+
+	text-align: center;
+	background-color: var(--grey-700);
 
 	@media (max-width: 940px) {
 		flex-direction: column;
@@ -24,38 +27,42 @@
 	justify-content: space-between;
 
 	p {
-		font-family: "Montserrat", sans-serif;
+		margin: 1.3rem 0;
+
 		font-size: 1.4rem;
 		font-weight: 400;
 		line-height: 1.7rem;
 		text-align: center;
-		color: #97989b;
 
-		margin: 1.3rem 0;
+		color: var(--grey-300);
 	}
 }
 
 .box {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 .social {
-	display: inline-block;
 	width: 3.2rem;
 	height: 3.2rem;
 
-	font-size: 1.4rem;
-	text-align: center;
-	color: #ffffff;
+	display: inline-block;
 
-	border-radius: 5rem;
-	padding: 0.8rem;
+	padding: 0.9rem;
 	margin: 0 0.6rem;
 
+	border-radius: 5rem;
+
+	font-size: 1.4rem;
+	text-align: center;
+
+	color: var(--white);
+
 	transition: all 0.2s ease-in-out;
+
 	&:hover {
 		transform: scale(1.1);
 	}
@@ -63,26 +70,19 @@
 
 .facebook {
 	@extend .social;
-	background: #225b99 !important;
+	background-color: var(--facebook);
 }
 .linkedin {
 	@extend .social;
-	background-color: #4875b4;
+	background-color: var(--linkedin);
 }
 .twitter {
 	@extend .social;
-	background-color: #00adf2;
+	background-color: var(--twitter);
 }
 .instagram {
 	@extend .social;
-	background: radial-gradient(
-		circle at 30% 107%,
-		#fdf497 0%,
-		#fdf497 5%,
-		#fd5949 45%,
-		#d6249f 60%,
-		#285aeb 90%
-	);
+	background: var(--instagram);
 }
 
 .contact {
@@ -90,49 +90,50 @@
 	flex-direction: column;
 
 	p {
-		font-family: "Montserrat", sans-serif;
+		margin-bottom: 1.2rem;
+
 		font-size: 1.4rem;
 		font-weight: 600;
-		color: #97989b;
 
-		margin-bottom: 1.2rem;
+		color: var(--grey-300);
 	}
 
 	li {
+		min-height: 3.2rem;
+
 		position: relative;
+
 		margin: 0.8rem 0;
 		padding-left: 5.5rem;
 		padding-top: 0.4rem;
-		min-height: 3.2rem;
-		list-style: none;
 
 		svg {
-			color: #ffffff;
-			background-color: #353535;
-			text-align: center;
-			line-height: 4rem;
-
-			border: none;
-			border-radius: 5rem;
-
-			padding: 0.8rem;
+			width: 3.2rem;
+			height: 3.2rem;
 
 			position: absolute;
 			left: 0;
 			top: 0;
 
-			width: 3.2rem;
-			height: 3.2rem;
+			padding: 0.8rem;
+
+			border: none;
+			border-radius: 5rem;
+
+			text-align: center;
+			line-height: 4rem;
+
+			background-color: var(--grey-500);
+			color: var(--white);
 		}
 
 		span {
-			font-family: "Montserrat", sans-serif;
 			font-size: 1.4rem;
 			font-weight: 400;
-
 			text-align: center;
 			line-height: 1.7rem;
-			color: #ffffff;
+
+			color: var(--white);
 		}
 	}
 }
@@ -148,39 +149,42 @@
 		p {
 			margin-bottom: 1.2rem;
 
-			font-family: "Montserrat", sans-serif;
 			font-size: 1.4rem;
 			font-weight: 600;
-			color: #97989b;
+
+			color: var(--grey-300);
 		}
 
 		input {
-			background-color: #353535;
-			border: none;
-			border-radius: 6px;
 			width: 100%;
 			height: 4rem;
-			padding: 0 1.5rem;
 
-			font-family: "Montserrat", sans-serif;
+			padding: 0 1.5rem;
+			margin-bottom: 0.8rem;
+
+			border: none;
+			border-radius: 6px;
+
 			font-size: 14px;
 			font-weight: 400;
-			color: #ffffff;
 
-			margin-bottom: 0.8rem;
+			color: var(--white);
+			background-color: var(--grey-500);
 		}
 
 		textarea {
-			background-color: #353535;
+			padding: 15px;
+			margin-bottom: 0.8rem;
+
 			border: none;
 			border-radius: 6px;
-			margin-bottom: 0.8rem;
-			padding: 15px;
 
 			font-family: "Montserrat", sans-serif;
 			font-size: 1.4rem;
 			font-weight: 400;
-			color: #ffffff;
+
+			color: var(--white);
+			background-color: var(--grey-500);
 		}
 	}
 }

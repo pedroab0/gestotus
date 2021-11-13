@@ -1,21 +1,24 @@
 .button {
+	position: relative;
+
+	display: inline-block;
+
+	vertical-align: middle;
+
 	text-align: center;
 	text-decoration: none;
+
 	border: none;
 	overflow: hidden;
 	cursor: pointer;
 
-	background: #333333;
-	color: #ffffff;
-
-	font-family: "Montserrat", sans-serif;
 	font-weight: 600;
 	font-size: 1.6rem;
 	line-height: 2rem;
 
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
+	background-color: var(--grey-500);
+	color: var(--white);
+
 	box-shadow: 0 0 1px rgb(0 0 0 / 0%);
 
 	-webkit-transform: perspective(1px) translateZ(0);
@@ -29,13 +32,16 @@
 
 	&::before {
 		content: "";
+
 		position: absolute;
 		z-index: -1;
+
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: #1f3864;
+
+		background: var(--blue-200);
 
 		-webkit-transform: scaleY(0);
 		transform: scaleY(0);
@@ -83,27 +89,32 @@
 }
 
 .disabled {
-	background-color: #c4c4c4;
-	color: #4d4c4e;
-
 	width: 100%;
+
+	position: relative;
+
+	display: inline-block;
+
+	vertical-align: middle;
+
 	padding: 1.2rem 2rem;
+
+	overflow: hidden;
+
+	border: none;
 	border-radius: 0rem 0rem 1.2rem 1.2rem;
 
-	text-align: center;
-	text-decoration: none;
-	border: none;
-	overflow: hidden;
 	cursor: not-allowed;
 	pointer-events: none;
 
-	font-family: "Montserrat", sans-serif;
 	font-weight: 600;
 	font-size: 1.6rem;
 	line-height: 2rem;
+	text-align: center;
+	text-decoration: none;
 
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
+	background-color: var(--grey-200);
+	color: var(--grey-400);
+
 	box-shadow: 0 0 1px rgb(0 0 0 / 0%);
 }

@@ -1,17 +1,20 @@
 .container {
-	background-color: #fff;
-
 	width: 100%;
+
+	background-color: var(--white);
 
 	position: sticky;
 	top: 0;
 	z-index: 2;
 
 	box-shadow: -1px 1px 1px rgb(0 0 0 / 10%);
+
 	animation: fadeInDown 700ms;
 	backface-visibility: hidden;
 
 	.box {
+		max-width: 104rem;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -19,14 +22,13 @@
 		margin: auto;
 		padding: 1rem 0;
 
-		max-width: 104rem;
-
 		.logo {
 			grid-area: logo;
 		}
 
 		@media (max-width: 1024px) {
 			padding: 1rem 6rem;
+
 			display: grid;
 			grid-template-areas:
 				"logo hamburger"
@@ -35,6 +37,7 @@
 
 		@media (max-width: 480px) {
 			padding: 1rem 2rem;
+
 			display: grid;
 			grid-template-areas:
 				"logo hamburger"
