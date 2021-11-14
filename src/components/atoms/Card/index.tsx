@@ -1,63 +1,30 @@
-import { Button } from "../Button";
-import styles from "./styles.module.scss";
+import { CardLG } from "./CardLg/index";
+import { CardMD } from "./CardMd/index";
+import { CardSM } from "./CardSm/index";
+import { CardXS } from "./CardXs/index";
 
 interface CardProps {
-	cardStyle: "xs" | "sm" | "md" | "lg";
+	cardType: "XS" | "SM" | "MD" | "LG";
 	thumbnail: string;
 	title?: string;
 	description?: string;
+	date?: string;
 	author?: string;
 	link?: string;
-	button?: boolean;
-	date?: string;
 	open?: boolean;
+	button?: boolean;
+	name?: string;
+	role?: string;
 }
 
-export function Card(props: CardProps) {
-	return (
-		<>
-			{props.cardStyle !== "lg" ? (
-				<div className={styles[props.cardStyle]}>
-					<a href={props.link}>
-						<img src={props.thumbnail} alt="Curso fonte" />
-					</a>
-					{props.title ? (
-						<div className={styles.texts}>
-							<h3>{props.title}</h3>
-							<p>{props.description}</p>
-						</div>
-					) : (
-						""
-					)}
-					{props.button ? (
-						<Button
-							buttonStyle={props.open ? "wide" : "disabled"}
-							label={props.open ? "Matrículas abertas" : "Matrículas Fechadas"}
-							link={props.link}
-						/>
-					) : (
-						""
-					)}
-				</div>
-			) : (
-				<div className={styles[props.cardStyle]}>
-					<a href={props.link}>
-						<img src={props.thumbnail} alt="Curso fonte" />
-						<div style={{ position: "relative" }}>
-							<div className={styles.dateTag}>
-								<h4>{props.date}</h4>
-							</div>
-						</div>
-						<div className={styles.lgTexts}>
-							<h3>{props.title}</h3>
-							<p>{props.description}</p>
-							<div>
-								por <strong>{props.author}</strong>
-							</div>
-						</div>
-					</a>
-				</div>
-			)}
-		</>
-	);
+export function Card({ cardType, ...props }: CardProps) {
+	if (cardType === "LG") {
+		return <CardLG {...props} />;
+	} else if (cardType === "MD") {
+		return <CardMD {...props} />;
+	} else if (cardType === "SM") {
+		return <CardSM {...props} />;
+	} else {
+		return <CardXS {...props} />;
+	}
 }

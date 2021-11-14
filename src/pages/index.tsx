@@ -61,7 +61,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 						{courses.map((course) => {
 							return (
 								<Card
-									cardStyle="md"
+									cardType="MD"
 									key={course.id}
 									title={course.title}
 									description={course.description}
@@ -80,7 +80,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 						{posts.map((post) => {
 							return (
 								<Card
-									cardStyle="lg"
+									cardType="LG"
 									key={post.id}
 									title={post.title}
 									description={post.description}
@@ -98,12 +98,13 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 					<Swiper
 						className={styles.swiperContainer}
 						slidesPerView={1}
+						slidesPerGroup={1}
 						spaceBetween={0}
 						watchSlidesProgress={true}
 						pagination={{
 							clickable: true,
 						}}
-						centeredSlides={true}
+						centeredSlides={false}
 						loop={true}
 						autoplay={{
 							delay: 2500,
@@ -112,6 +113,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 						breakpoints={{
 							"768": {
 								slidesPerView: 3,
+								slidesPerGroup: 3,
 								spaceBetween: 24,
 								navigation: false,
 							},
@@ -121,7 +123,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 							return (
 								<SwiperSlide key={parceiro.id} className={styles.swiperSlide}>
 									<Card
-										cardStyle="xs"
+										cardType="XS"
 										link={parceiro.link}
 										thumbnail={parceiro.thumbnail}
 									/>
