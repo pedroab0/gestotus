@@ -1,0 +1,8 @@
+@use "../card" as *;
+
+.md {
+	@extend .card;
+	@extend .grow;
+	max-width: 35rem;
+	margin: auto;
+}

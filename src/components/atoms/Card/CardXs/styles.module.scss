@@ -1,0 +1,14 @@
+@use "../card" as *;
+
+.xs {
+	@extend .card;
+	max-width: 35rem;
+	margin: auto;
+
+	img {
+		min-height: 15rem;
+		border-radius: 12px;
+
+		pointer-events: fill;
+	}
+}

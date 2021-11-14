@@ -1,0 +1,60 @@
+@use "../card" as *;
+
+.lg {
+	@extend .card;
+	@extend .grow;
+	max-width: 50rem;
+
+	img {
+		min-height: 17rem;
+	}
+
+	.lgTexts {
+		@extend .texts;
+		padding: 0 4rem 2rem;
+		strong {
+			font-weight: 700;
+			font-size: 1.2rem;
+			line-height: 1.7rem;
+		}
+	}
+
+	.dateTag {
+		width: 17rem;
+		height: 4rem;
+
+		position: absolute;
+		bottom: 118px;
+		left: -15px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+		border-radius: 6px;
+
+		text-align: center;
+
+		color: var(--white);
+		background: rgba(125, 58, 60, 0.9);
+
+		h4 {
+			font-size: 1.6rem;
+			font-weight: 600;
+			line-height: 1.95rem;
+			text-align: center;
+		}
+
+		@media (max-width: 768px) {
+			width: 12.5rem;
+			height: 3rem;
+
+			h4 {
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
