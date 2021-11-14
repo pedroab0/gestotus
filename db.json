@@ -77,42 +77,49 @@
 		},
 		"members": [
 			{
+				"id": 0,
 				"name": "Tatyana Lima",
 				"role": "Sócia Administrativa",
 				"description": "Economista, docente, consultora nas áreas de inovação e diagnóstico e estratégia empresarial, com experiência na elaboração, gestão, execução e prestação de contas de projetos empresariais e públicos.",
 				"thumbnail": "/tatyanalima.jpeg"
 			},
 			{
+				"id": 1,
 				"name": "João Geraldo",
 				"role": "Sócio Administrativo",
 				"description": "Administrador, docente, consultor em desenvolvimento organizacional, planos de negócios, planos tecnológicos, científicos, sustentáveis e de inovação para setor público e empresarial.",
 				"thumbnail": "/tatyanalima.jpeg"
 			},
 			{
+				"id": 2,
 				"name": "Chico Rosário",
 				"role": "Sócio",
 				"description": "Economista de empresas, docente, pesquisador, designer de negócios, consultor nas áreas de inovação, modelagem de negócios e pesquisa de mercado.",
 				"thumbnail": "/tatyanalima.jpeg"
 			},
 			{
+				"id": 3,
 				"name": "Rúbia Barbalho",
 				"role": "Sócia",
 				"description": "Pedagoga, consultora com experiências nas áreas de compras públicas rurais, PNAE, negócios no campo; apicultura; desenvolvimento territorial e análise de mercado para negócios.",
 				"thumbnail": "/tatyanalima.jpeg"
 			},
 			{
+				"id": 4,
 				"name": "Dawison Calheiros",
 				"role": "Sócio",
 				"description": "Administrador, docente, consultor empresarial nas áreas de licitações, contratos, compras públicas, Políticas públicas e planejamento estratégico.",
 				"thumbnail": "/dawison.jpeg"
 			},
 			{
+				"id": 5,
 				"name": "Dayse Cahet",
 				"role": "Sócia",
 				"description": "Administradora, consultora e assessora parlamentar. Com experiência em convênios, prestação de contas, compras públicas, contratos, licitação, análise de editais e instrumentalização de processos.",
 				"thumbnail": "/daysecahet.jpeg"
 			},
 			{
+				"id": 6,
 				"name": "Mell Bezerra",
 				"role": "Sócia",
 				"description": "Gestora Pública e Turismóloga, consultora de Turismo, Desenvolvimento Sustentável, Gestão de Empresas e Estratégia de Negócios. Com experiência em elaboração de Plano de Desenvolvimento Municipal.",
