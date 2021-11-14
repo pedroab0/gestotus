@@ -1,6 +1,14 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
+SwiperCore.use([Autoplay, Pagination]);
+
+import { Card } from "../../components/atoms/Card";
 import { Section } from "../../components/atoms/Section";
 import { Social } from "../../components/atoms/Social";
 import { api } from "../../services/api";
@@ -13,6 +21,7 @@ interface About {
 }
 
 interface Member {
+	id: number;
 	name: string;
 	role: string;
 	description: string;
@@ -44,6 +53,51 @@ export default function About({ about, members }: AboutProps) {
 					</div>
 				</div>
 			</Section>
+
+			<Section background="whiteBackground" title="Nossos Membros">
+				<Swiper
+					className={styles.swiperContainer}
+					slidesPerView={1}
+					slidesPerGroup={1}
+					spaceBetween={0}
+					watchSlidesProgress={true}
+					pagination={{
+						clickable: true,
+					}}
+					centeredSlides={false}
+					loop={true}
+					autoplay={{
+						delay: 2500,
+						disableOnInteraction: false,
+					}}
+					breakpoints={{
+						"768": {
+							slidesPerView: 2,
+							slidesPerGroup: 2,
+							navigation: false,
+						},
+						"1024": {
+							slidesPerView: 3,
+							slidesPerGroup: 3,
+							navigation: false,
+						},
+					}}
+				>
+					{members.map((member) => {
+						return (
+							<SwiperSlide key={member.id} className={styles.swiperSlide}>
+								<Card
+									cardType="SM"
+									name={member.name}
+									role={member.role}
+									thumbnail={member.thumbnail}
+									description={member.description}
+								/>
+							</SwiperSlide>
+						);
+					})}
+				</Swiper>
+			</Section>
 		</main>
 	);
 }
@@ -55,6 +109,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const members = data.members.map((member: Member) => {
 		return {
+			id: member.id,
 			name: member.name,
 			role: member.role,
 			description: member.description,
