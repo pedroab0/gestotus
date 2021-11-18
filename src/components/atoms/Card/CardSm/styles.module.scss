@@ -2,7 +2,6 @@
 
 .sm {
 	@extend .card;
-	@extend .grow;
 	height: auto;
 	max-height: 61.2rem;
 
@@ -16,7 +15,7 @@
 
 	.nameTag {
 		width: 20rem;
-		height: 6rem;
+		height: 5rem;
 
 		position: absolute;
 		bottom: 25px;
@@ -75,6 +74,7 @@
 			margin: 0;
 			height: 15rem;
 			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 }

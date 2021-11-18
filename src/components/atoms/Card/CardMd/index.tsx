@@ -13,7 +13,7 @@ export function CardMD({ thumbnail, title, description, link, open }: CardMd) {
 	return (
 		<div className={styles.md}>
 			<img src={thumbnail} alt="Curso fonte" />
-			<div className={styles.texts}>
+			<div className={styles.text}>
 				<h3>{title}</h3>
 				<p>{description}</p>
 			</div>
