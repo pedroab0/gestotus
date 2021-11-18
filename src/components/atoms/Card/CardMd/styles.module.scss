@@ -5,4 +5,8 @@
 	@extend .grow;
 	max-width: 35rem;
 	margin: auto;
+
+	.text {
+		@extend .texts;
+	}
 }
