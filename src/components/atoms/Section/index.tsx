@@ -11,17 +11,14 @@ interface SectionProps {
 	link?: string;
 }
 
-export function Section(props: SectionProps) {
-	return (
-		<section className={styles[props.background]}>
-			{props.title ? <h2>{props.title}</h2> : ""}
-			{!props.subtitle ? "" : <p>{props.subtitle}</p>}
-			{props.children}
-			{props.button ? (
-				<Button link={props.link} buttonStyle="simple" label="Saiba mais" />
-			) : (
-				""
-			)}
-		</section>
-	);
-}
+export const Section = (props: SectionProps) =>
+	<section className={styles[props.background]}>
+		{props.title ? <h2>{props.title}</h2> : ""}
+		{!props.subtitle ? "" : <p>{props.subtitle}</p>}
+		{props.children}
+		{props.button ? (
+			<Button link={props.link} buttonStyle="simple" label="Saiba mais" />
+		) : (
+			""
+		)}
+	</section>

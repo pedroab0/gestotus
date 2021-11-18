@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-export function Hamburger() {
+export const Hamburger = () => {
 	const [clicked, setClicked] = useState(false);
 
 	return (

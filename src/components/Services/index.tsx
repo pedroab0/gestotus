@@ -4,130 +4,127 @@ import { MdExpandMore } from "react-icons/md";
 import { Section } from "../atoms/Section";
 import styles from "./styles.module.scss";
 
-export function Services() {
-	return (
-		<Section title="Serviços" background="greyBackground">
-			<div className={styles.container}>
-				<div className={styles.box}>
-					<h3>Gestão Pública</h3>
-					<Accordion sx={{ boxShadow: "unset" }}>
-						<AccordionSummary
-							expandIcon={<MdExpandMore />}
-							aria-controls="panel1a-content"
-							id="panel1a-header"
-							sx={{
-								"& .MuiAccordionSummary-expandIconWrapper": {
-									svg: {
-										height: 30,
-										width: 30,
-									},
+export const Services = () =>
+	<Section title="Serviços" background="greyBackground">
+		<div className={styles.container}>
+			<div className={styles.box}>
+				<h3>Gestão Pública</h3>
+				<Accordion sx={{ boxShadow: "unset" }}>
+					<AccordionSummary
+						expandIcon={<MdExpandMore />}
+						aria-controls="panel1a-content"
+						id="panel1a-header"
+						sx={{
+							"& .MuiAccordionSummary-expandIconWrapper": {
+								svg: {
+									height: 30,
+									width: 30,
 								},
-							}}
-						>
-							<Typography
-								sx={{
-									fontFamily: "Montserrat",
-									fontSize: 18,
-									fontWeight: 600,
-								}}
-							>
-								Assessoria
-							</Typography>
-						</AccordionSummary>
-						<AccordionDetails
+							},
+						}}
+					>
+						<Typography
 							sx={{
-								backgroundColor: "#ecedec",
-								padding: "8px 16px 16px",
-								fontFamily: "Montserrat, sans-serif",
+								fontFamily: "Montserrat",
+								fontSize: 18,
+								fontWeight: 600,
 							}}
 						>
-							<Typography>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-								malesuada lacus ex, sit amet blandit leo lobortis eget.
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-				</div>
-
-				<div className={styles.box}>
-					<h3>Gestão Empresarial</h3>
-					<Accordion sx={{ boxShadow: "unset" }} disableGutters>
-						<AccordionSummary
-							expandIcon={<MdExpandMore />}
-							aria-controls="panel2a-content"
-							id="panel2a-header"
-							sx={{
-								"& .MuiAccordionSummary-expandIconWrapper": {
-									svg: {
-										height: 30,
-										width: 30,
-									},
-								},
-							}}
-						>
-							<Typography
-								sx={{
-									fontFamily: "Montserrat",
-									fontSize: 18,
-									fontWeight: 600,
-								}}
-							>
-								Diagnósticos e Estratégias Empresariais
-							</Typography>
-						</AccordionSummary>
-						<AccordionDetails
-							sx={{
-								backgroundColor: "#ecedec",
-								padding: "8px 16px 16px",
-								fontFamily: "Montserrat, sans-serif",
-							}}
-						>
-							<Typography>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-								malesuada lacus ex, sit amet blandit leo lobortis eget.
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-
-					<Accordion sx={{ boxShadow: "unset" }} disableGutters>
-						<AccordionSummary
-							expandIcon={<MdExpandMore />}
-							aria-controls="panel2a-content"
-							id="panel3a-header"
-							sx={{
-								"& .MuiAccordionSummary-expandIconWrapper": {
-									svg: {
-										height: 30,
-										width: 30,
-									},
-								},
-							}}
-						>
-							<Typography
-								sx={{
-									fontFamily: "Montserrat",
-									fontSize: 18,
-									fontWeight: 600,
-								}}
-							>
-								Organização, Desenvolvimento e Sustentabilidade
-							</Typography>
-						</AccordionSummary>
-						<AccordionDetails
-							sx={{
-								backgroundColor: "#ecedec",
-								padding: "8px 16px 16px",
-								fontFamily: "Montserrat, sans-serif",
-							}}
-						>
-							<Typography>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-								malesuada lacus ex, sit amet blandit leo lobortis eget.
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-				</div>
+							Assessoria
+						</Typography>
+					</AccordionSummary>
+					<AccordionDetails
+						sx={{
+							backgroundColor: "#ecedec",
+							padding: "8px 16px 16px",
+							fontFamily: "Montserrat, sans-serif",
+						}}
+					>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+							malesuada lacus ex, sit amet blandit leo lobortis eget.
+						</Typography>
+					</AccordionDetails>
+				</Accordion>
 			</div>
-		</Section>
-	);
-}
+
+			<div className={styles.box}>
+				<h3>Gestão Empresarial</h3>
+				<Accordion sx={{ boxShadow: "unset" }} disableGutters>
+					<AccordionSummary
+						expandIcon={<MdExpandMore />}
+						aria-controls="panel2a-content"
+						id="panel2a-header"
+						sx={{
+							"& .MuiAccordionSummary-expandIconWrapper": {
+								svg: {
+									height: 30,
+									width: 30,
+								},
+							},
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: "Montserrat",
+								fontSize: 18,
+								fontWeight: 600,
+							}}
+						>
+							Diagnósticos e Estratégias Empresariais
+						</Typography>
+					</AccordionSummary>
+					<AccordionDetails
+						sx={{
+							backgroundColor: "#ecedec",
+							padding: "8px 16px 16px",
+							fontFamily: "Montserrat, sans-serif",
+						}}
+					>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+							malesuada lacus ex, sit amet blandit leo lobortis eget.
+						</Typography>
+					</AccordionDetails>
+				</Accordion>
+
+				<Accordion sx={{ boxShadow: "unset" }} disableGutters>
+					<AccordionSummary
+						expandIcon={<MdExpandMore />}
+						aria-controls="panel2a-content"
+						id="panel3a-header"
+						sx={{
+							"& .MuiAccordionSummary-expandIconWrapper": {
+								svg: {
+									height: 30,
+									width: 30,
+								},
+							},
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: "Montserrat",
+								fontSize: 18,
+								fontWeight: 600,
+							}}
+						>
+							Organização, Desenvolvimento e Sustentabilidade
+						</Typography>
+					</AccordionSummary>
+					<AccordionDetails
+						sx={{
+							backgroundColor: "#ecedec",
+							padding: "8px 16px 16px",
+							fontFamily: "Montserrat, sans-serif",
+						}}
+					>
+						<Typography>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+							malesuada lacus ex, sit amet blandit leo lobortis eget.
+						</Typography>
+					</AccordionDetails>
+				</Accordion>
+			</div>
+		</div>
+	</Section>

@@ -7,14 +7,12 @@ interface ButtonProps {
 	link?: string;
 }
 
-export function Button(props: ButtonProps) {
-	return props.submit != true ? (
+export const Button = (props: ButtonProps) =>
+	props.submit != true ?
 		<a href={props.link} className={styles[props.buttonStyle]}>
 			{props.label}
 		</a>
-	) : (
+		:
 		<button type="submit" className={styles[props.buttonStyle]}>
 			{props.label}
 		</button>
-	);
-}
