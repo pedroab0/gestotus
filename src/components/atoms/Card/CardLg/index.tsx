@@ -9,24 +9,21 @@ export type CardLg = {
 	link?: string;
 };
 
-export function CardLG({ thumbnail, date, title, description, author, link }: CardLg) {
-	return (
-		<div className={styles.lg}>
-			<a href={link}>
-				<img src={thumbnail} alt="Curso fonte" />
-				<div style={{ position: "relative" }}>
-					<div className={styles.dateTag}>
-						<h4>{date}</h4>
-					</div>
+export const CardLG = ({ thumbnail, date, title, description, author, link }: CardLg) =>
+	<div className={styles.lg}>
+		<a href={link}>
+			<img src={thumbnail} alt="Curso fonte" />
+			<div style={{ position: "relative" }}>
+				<div className={styles.dateTag}>
+					<h4>{date}</h4>
 				</div>
-				<div className={styles.lgTexts}>
-					<h3>{title}</h3>
-					<p>{description}</p>
-					<div>
-						por <strong>{author}</strong>
-					</div>
+			</div>
+			<div className={styles.lgTexts}>
+				<h3>{title}</h3>
+				<p>{description}</p>
+				<div>
+					por <strong>{author}</strong>
 				</div>
-			</a>
-		</div>
-	);
-}
+			</div>
+		</a>
+	</div>

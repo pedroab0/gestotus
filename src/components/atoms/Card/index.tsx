@@ -17,7 +17,7 @@ interface CardProps {
 	role?: string;
 }
 
-export function Card({ cardType, ...props }: CardProps) {
+export const Card = ({ cardType, ...props }: CardProps) => {
 	if (cardType === "LG") {
 		return <CardLG {...props} />;
 	} else if (cardType === "MD") {

@@ -5,12 +5,9 @@ interface CardXs {
 	link?: string;
 }
 
-export function CardXS({ thumbnail, link }: CardXs) {
-	return (
-		<div className={styles.xs}>
-			<a href={link}>
-				<img src={thumbnail} alt="Curso fonte" />
-			</a>
-		</div>
-	);
-}
+export const CardXS = ({ thumbnail, link }: CardXs) =>
+	<div className={styles.xs}>
+		<a href={link}>
+			<img src={thumbnail} alt="Curso fonte" />
+		</a>
+	</div>
