@@ -16,10 +16,10 @@ export function Nav() {
 					<a href="#">Blog</a>
 				</li>
 				<li>
-					<Link href="/about">Sobre nós</Link>
+					<Link href="/drlicitacao">Dr. Licitação</Link>
 				</li>
 				<li>
-					<Link href="#">Dr. Licitação</Link>
+					<Link href="/about">Sobre nós</Link>
 				</li>
 			</ul>
 		</nav>
