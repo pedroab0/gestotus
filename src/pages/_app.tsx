@@ -1,6 +1,10 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+// Swiper
+import "swiper/scss";
+import "swiper/scss/pagination";
+
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
