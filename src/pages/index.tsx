@@ -4,8 +4,6 @@ import ptBR from "date-fns/locale/pt-BR";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 SwiperCore.use([Autoplay, Pagination]);
 

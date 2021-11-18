@@ -3,8 +3,6 @@ import Image from "next/image";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -65,7 +63,6 @@ export default function About({ about, members }: AboutProps) {
 						clickable: true,
 					}}
 					centeredSlides={false}
-					loop={true}
 					autoplay={{
 						delay: 2500,
 						disableOnInteraction: false,
@@ -87,10 +84,11 @@ export default function About({ about, members }: AboutProps) {
 						return (
 							<SwiperSlide key={member.id} className={styles.swiperSlide}>
 								<Card
+									key={member.id}
 									cardType="SM"
+									thumbnail={member.thumbnail}
 									name={member.name}
 									role={member.role}
-									thumbnail={member.thumbnail}
 									description={member.description}
 								/>
 							</SwiperSlide>
