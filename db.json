@@ -88,21 +88,21 @@
 				"name": "João Geraldo",
 				"role": "Sócio Administrativo",
 				"description": "Administrador, docente, consultor em desenvolvimento organizacional, planos de negócios, planos tecnológicos, científicos, sustentáveis e de inovação para setor público e empresarial.",
-				"thumbnail": "/tatyanalima.jpeg"
+				"thumbnail": "/joao-geraldo.jpg"
 			},
 			{
 				"id": 3,
 				"name": "Chico Rosário",
 				"role": "Sócio",
 				"description": "Economista de empresas, docente, pesquisador, designer de negócios, consultor nas áreas de inovação, modelagem de negócios e pesquisa de mercado.",
-				"thumbnail": "/tatyanalima.jpeg"
+				"thumbnail": "/chico-rosario.jpeg"
 			},
 			{
 				"id": 4,
 				"name": "Rúbia Barbalho",
 				"role": "Sócia",
 				"description": "Pedagoga, consultora com experiências nas áreas de compras públicas rurais, PNAE, negócios no campo; apicultura; desenvolvimento territorial e análise de mercado para negócios.",
-				"thumbnail": "/tatyanalima.jpeg"
+				"thumbnail": "/rubia-barbalho.jpg"
 			},
 			{
 				"id": 5,
@@ -124,6 +124,82 @@
 				"role": "Sócia",
 				"description": "Gestora Pública e Turismóloga, consultora de Turismo, Desenvolvimento Sustentável, Gestão de Empresas e Estratégia de Negócios. Com experiência em elaboração de Plano de Desenvolvimento Municipal.",
 				"thumbnail": "/mellbezerra.jpeg"
+			}
+		]
+	},
+
+	"drlicitacao": {
+		"categories": [
+			{
+				"id": 1,
+				"label": "Certidões Federais",
+				"value": "certidoes-federais"
+			},
+			{
+				"id": 2,
+				"label": "Certidões Estaduais",
+				"value": "certidoes-estaduais"
+			},
+			{
+				"id": 3,
+				"label": "Certidões Municipais",
+				"value": "certidoes-municipais"
+			}
+		],
+		"links": [
+			{
+				"id": 1,
+				"label": "CND - RECEITA FEDERAL DO BRASIL",
+				"value": "certidoes-federais",
+				"url": "http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=1"
+			},
+			{
+				"id": 2,
+				"label": "CND – DÉBITOS TRABALHISTAS",
+				"value": "certidoes-federais",
+				"url": "http://www.tst.jus.br/certidao"
+			},
+			{
+				"id": 3,
+				"label": "CERTIFICADO DE REGULARIDADE DE FGTS",
+				"value": "certidoes-federais",
+				"url": "https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf"
+			},
+			{
+				"id": 4,
+				"label": "ALAGOAS – CND ESTADUAL",
+				"value": "certidoes-estaduais",
+				"url": "https://contribuinte.sefaz.al.gov.br/certidao/#/emitircertidao"
+			},
+			{
+				"id": 5,
+				"label": "PERNAMBUCO - CND ESTADUAL",
+				"value": "certidoes-estaduais",
+				"url": "http://efisco.sefaz.pe.gov.br/sfi_trb_gpf/PREmitirCertidaoNegativaNarrativaDebitoFiscal"
+			},
+			{
+				"id": 6,
+				"label": "SERGIPE - CND ESTADUAL",
+				"value": "certidoes-estaduais",
+				"url": "http://www.sefaz.se.gov.br/SitePages/servico.aspx?cod=10&Url=https%3a//security.sefaz.se.gov.br/internet/publico/cleanProcess.jsp&AppName=SIC&TransId=T24070&CancelUrl=paginaInicial.jsp"
+			},
+			{
+				"id": 7,
+				"label": "RECIFE - CND MUNICIPAL",
+				"value": "certidoes-municipais",
+				"url": "https://recifeemdia.recife.pe.gov.br/emissaoCertidao/4"
+			},
+			{
+				"id": 8,
+				"label": "ARACAJU - CND MUNICIPAL",
+				"value": "certidoes-municipais",
+				"url": "https://fazenda.aracaju.se.gov.br/#/publica/contribuinte/certidao-negativa"
+			},
+			{
+				"id": 9,
+				"label": "RECIFE - AUTENTICAÇÃO CND MUNICIPAL",
+				"value": "certidoes-municipais",
+				"url": "https://recifeemdia.recife.pe.gov.br/autenticidadeCertidao"
 			}
 		]
 	}
