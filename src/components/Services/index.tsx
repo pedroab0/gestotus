@@ -28,7 +28,7 @@ export function Services() {
 								sx={{
 									fontFamily: "Montserrat",
 									fontSize: 18,
-									fontWeight: 500,
+									fontWeight: 600,
 								}}
 							>
 								Assessoria
@@ -69,7 +69,7 @@ export function Services() {
 								sx={{
 									fontFamily: "Montserrat",
 									fontSize: 18,
-									fontWeight: 500,
+									fontWeight: 600,
 								}}
 							>
 								Diagnósticos e Estratégias Empresariais
@@ -107,7 +107,7 @@ export function Services() {
 								sx={{
 									fontFamily: "Montserrat",
 									fontSize: 18,
-									fontWeight: 500,
+									fontWeight: 600,
 								}}
 							>
 								Organização, Desenvolvimento e Sustentabilidade
