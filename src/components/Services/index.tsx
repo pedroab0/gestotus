@@ -4,7 +4,7 @@ import { MdExpandMore } from "react-icons/md";
 import { Section } from "../atoms/Section";
 import styles from "./styles.module.scss";
 
-export const Services = () =>
+export const Services = () => (
 	<Section title="Serviços" background="greyBackground">
 		<div className={styles.container}>
 			<div className={styles.box}>
@@ -25,7 +25,7 @@ export const Services = () =>
 					>
 						<Typography
 							sx={{
-								fontFamily: "Montserrat",
+								fontFamily: "Montserrat, sans-serif",
 								fontSize: 18,
 								fontWeight: 600,
 							}}
@@ -66,7 +66,7 @@ export const Services = () =>
 					>
 						<Typography
 							sx={{
-								fontFamily: "Montserrat",
+								fontFamily: "Montserrat, sans-serif",
 								fontSize: 18,
 								fontWeight: 600,
 							}}
@@ -104,7 +104,7 @@ export const Services = () =>
 					>
 						<Typography
 							sx={{
-								fontFamily: "Montserrat",
+								fontFamily: "Montserrat, sans-serif",
 								fontSize: 18,
 								fontWeight: 600,
 							}}
@@ -128,3 +128,4 @@ export const Services = () =>
 			</div>
 		</div>
 	</Section>
+);
