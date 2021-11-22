@@ -5,6 +5,7 @@ import Chip from "@mui/material/Chip";
 import { MdCancel, MdAddCircle } from "react-icons/md";
 
 import { api } from "../../services/api";
+import { Section } from "../../components/atoms/Section";
 import styles from "./styles.module.scss";
 
 interface Categorie {
@@ -28,23 +29,30 @@ interface DrLicitacaoProps {
 export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 	const [selectedCategories, setSelectedCategories] = useState<Categorie[]>([]);
 
-	const [selectedChip, setSelectedChip] = useState(false);
+	const [selectedChip, setSelectedChip] = useState<boolean[]>([]);
 
-	const handleDelete = (categorieToDelete: Categorie) => () => {
-		setSelectedCategories((selectedCategories) =>
-			selectedCategories.filter((categorie) => categorie.id !== categorieToDelete.id)
-		);
-		setSelectedChip(false);
+	const handleCategorieToggle = (categorieToToggle: Categorie) => () => {
+		if (selectedCategories.find((categorie) => categorie.id === categorieToToggle.id)) {
+			setSelectedCategories((selectedCategories) =>
+				selectedCategories.filter((categorie) => categorie.id !== categorieToToggle.id)
+			);
+			selectedChip[categorieToToggle.id] = false;
+		} else {
+			setSelectedCategories([...selectedCategories, categorieToToggle]);
+			selectedChip[categorieToToggle.id] = true;
+		}
 	};
 
-	const handleSelect = (categorieToSelect: Categorie) => () => {
-		if (selectedCategories.find((categorie) => categorie.id === categorieToSelect.id)) {
-			return;
-		}
-		let newSelectedCategories = selectedCategories;
-		newSelectedCategories.push(categorieToSelect);
-		setSelectedCategories(newSelectedCategories);
-		setSelectedChip(true);
+	const selectedLinks = () => {
+		let selectedLinks: Link[] = [];
+		selectedCategories.map((categorie) => {
+			links.map((link) => {
+				if (link.value === categorie.value) {
+					selectedLinks.push(link);
+				}
+			});
+		});
+		return selectedLinks;
 	};
 
 	return (
@@ -53,7 +61,7 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 				<Image
 					src="/doutor-licitacao.png"
 					width={350}
-					height={360}
+					height={350}
 					alt="Dr. Licitação"
 					priority
 				/>
@@ -65,26 +73,22 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 						{categories.map((categorie) => {
 							let icon: JSX.Element;
 
-							selectedChip
-								? (icon = <MdCancel color={"#4d4c4e"} size={"1.5em"} />)
-								: (icon = <MdAddCircle color={"#4d4c4e"} size={"1.5em"} />);
+							selectedChip[categorie.id]
+								? (icon = <MdCancel color={"#4d4c4e"} size={"1.4em"} />)
+								: (icon = <MdAddCircle color={"#4d4c4e"} size={"1.4em"} />);
 
 							return (
 								<div className={styles.chip} key={categorie.id}>
 									<Chip
 										sx={{
 											backgroundColor: "#fff",
-											fontFamily: "Montserrat",
+											fontFamily: "Montserrat, sans-serif",
 											fontSize: "16px",
 											fontWeight: "500",
 										}}
 										label={categorie.label}
 										icon={icon}
-										onClick={
-											selectedChip === false
-												? handleSelect(categorie)
-												: handleDelete(categorie)
-										}
+										onClick={handleCategorieToggle(categorie)}
 									/>
 								</div>
 							);
@@ -92,6 +96,19 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 					</div>
 				</div>
 			</div>
+
+			<Section background="greyBackground">
+				<div className={styles.container}>
+					{selectedLinks().map((linkToShow) => {
+						console.log(linkToShow);
+						return (
+							<a href={linkToShow.url} key={linkToShow.id} className={styles.table}>
+								<p>{linkToShow.label}</p>
+							</a>
+						);
+					})}
+				</div>
+			</Section>
 		</>
 	);
 }
