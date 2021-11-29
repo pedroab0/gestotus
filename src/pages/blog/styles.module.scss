@@ -1,0 +1,14 @@
+main {
+	.posts {
+		display: grid;
+		grid-template-columns: 1.5fr 1.5fr;
+		gap: 3.5rem;
+		padding: 4rem 2rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			row-gap: 2rem;
+			padding: 2rem;
+		}
+	}
+}
