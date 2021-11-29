@@ -1,0 +1,139 @@
+.postContainer {
+	background: url(/banner.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: var(--grey-100);
+}
+
+.post {
+	position: relative;
+	max-width: 1024px;
+	top: 50px;
+	width: 90%;
+	height: fit-content;
+	margin: 0 auto 100px auto;
+
+	display: flex;
+	flex-direction: column;
+
+	border-radius: 1.2rem;
+
+	background-color: var(--white);
+	box-shadow: 0px 8px 26px -4px rgba(20, 20, 20, 0.15), 0px 8px 9px -5px rgba(20, 20, 20, 0.06);
+
+	img {
+		width: 100%;
+
+		background-size: cover;
+		background-position: inherit;
+		background-repeat: no-repeat;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+
+		border-radius: 1.2rem 1.2rem 0 0;
+	}
+
+	.dateTag {
+		width: 17rem;
+		height: 4rem;
+
+		position: absolute;
+		top: 40px;
+		left: -15px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+		border-radius: 6px;
+
+		text-align: center;
+
+		color: var(--white);
+		background: rgba(125, 58, 60, 0.9);
+
+		h4 {
+			font-size: 1.6rem;
+			font-weight: 600;
+			line-height: 1.95rem;
+			text-align: center;
+		}
+
+		@media (max-width: 768px) {
+			width: 12.5rem;
+			height: 3rem;
+
+			top: 20px;
+
+			h4 {
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	.title {
+		position: absolute;
+		top: -170px;
+
+		height: 170px;
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-end;
+
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.9));
+
+		color: var(--white);
+
+		h1 {
+			font-size: 2.2rem;
+			margin-left: 2.5rem;
+			margin-bottom: 1rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+			margin-left: 2.5rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	p {
+		padding: 4rem;
+		font-size: 1.4rem;
+	}
+
+	@media (min-width: 1024px) {
+		.title {
+			h1 {
+				font-size: 3.2rem;
+			}
+
+			h5 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.title {
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h5 {
+				font-size: 1rem;
+			}
+		}
+
+		p {
+			padding: 2rem;
+		}
+	}
+}
