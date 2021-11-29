@@ -7,6 +7,7 @@ import "swiper/scss/pagination";
 
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { WhatsappWidget } from "../components/atoms/WhatsappWidget";
 
 import "../styles/globals.scss";
 import styles from "../styles/app.module.scss";
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<Header />
 				<Component {...pageProps} />
 				<Footer />
+				<WhatsappWidget />
 			</div>
 		</>
 	);
