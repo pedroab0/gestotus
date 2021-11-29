@@ -1,0 +1,59 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	position: fixed;
+	bottom: 44px;
+	z-index: 5;
+
+	width: 100%;
+	max-width: 900px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 26px 30px;
+	margin: auto;
+
+	border-radius: 8px;
+
+	background-color: #fff;
+	box-shadow: 0px 10px 30px #0000004d;
+
+	.text {
+		max-width: 555px;
+		font-size: 13px;
+		line-height: 18px;
+		text-align: left;
+		color: #000;
+		margin: unset;
+	}
+
+	.button {
+		width: 170px;
+		height: 40px;
+		border: none;
+		border-radius: 8px;
+		background-color: var(--grey-600);
+		cursor: pointer;
+
+		color: #fff;
+		letter-spacing: 0.24px;
+		font-size: 12px;
+		font-weight: 500;
+	}
+}
+
+@media (max-width: 1024px) {
+	.box {
+		width: unset;
+		flex-direction: column;
+		margin: 40px;
+		row-gap: 20px;
+		padding: 20px;
+	}
+}
