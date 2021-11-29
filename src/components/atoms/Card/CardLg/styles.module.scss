@@ -5,6 +5,11 @@
 	@extend .grow;
 	max-width: 50rem;
 
+	a {
+		display: flex;
+		flex-direction: column;
+	}
+
 	img {
 		min-height: 17rem;
 	}
@@ -24,7 +29,7 @@
 		height: 4rem;
 
 		position: absolute;
-		bottom: 118px;
+		bottom: 115px;
 		left: -15px;
 
 		display: flex;
