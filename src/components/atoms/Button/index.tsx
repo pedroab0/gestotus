@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 interface ButtonProps {
@@ -8,11 +9,12 @@ interface ButtonProps {
 }
 
 export const Button = (props: ButtonProps) =>
-	props.submit != true ?
-		<a href={props.link} className={styles[props.buttonStyle]}>
-			{props.label}
-		</a>
-		:
+	props.submit != true ? (
+		<Link href={props.link || "#"}>
+			<a className={styles[props.buttonStyle]}>{props.label}</a>
+		</Link>
+	) : (
 		<button type="submit" className={styles[props.buttonStyle]}>
 			{props.label}
 		</button>
+	);

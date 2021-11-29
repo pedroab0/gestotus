@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 export type CardLg = {
@@ -9,21 +10,24 @@ export type CardLg = {
 	link?: string;
 };
 
-export const CardLG = ({ thumbnail, date, title, description, author, link }: CardLg) =>
+export const CardLG = ({ thumbnail, date, title, description, author, link }: CardLg) => (
 	<div className={styles.lg}>
-		<a href={link}>
-			<img src={thumbnail} alt="Curso fonte" />
-			<div style={{ position: "relative" }}>
-				<div className={styles.dateTag}>
-					<h4>{date}</h4>
+		<Link href={link || "#"}>
+			<a>
+				<img src={thumbnail} alt="Curso fonte" />
+				<div style={{ position: "relative" }}>
+					<div className={styles.dateTag}>
+						<h4>{date}</h4>
+					</div>
 				</div>
-			</div>
-			<div className={styles.lgTexts}>
-				<h3>{title}</h3>
-				<p>{description}</p>
-				<div>
-					por <strong>{author}</strong>
+				<div className={styles.lgTexts}>
+					<h3>{title}</h3>
+					<p>{description}</p>
+					<div>
+						por <strong>{author}</strong>
+					</div>
 				</div>
-			</div>
-		</a>
+			</a>
+		</Link>
 	</div>
+);

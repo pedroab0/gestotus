@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./styles.module.scss";
 
 interface CardXs {
@@ -5,9 +7,12 @@ interface CardXs {
 	link?: string;
 }
 
-export const CardXS = ({ thumbnail, link }: CardXs) =>
+export const CardXS = ({ thumbnail, link }: CardXs) => (
 	<div className={styles.xs}>
-		<a href={link}>
-			<img src={thumbnail} alt="Curso fonte" />
-		</a>
+		<Link href={link || "#"}>
+			<a>
+				<img src={thumbnail} alt="Curso fonte" />
+			</a>
+		</Link>
 	</div>
+);
