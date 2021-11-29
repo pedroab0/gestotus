@@ -73,7 +73,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 					</div>
 				</Section>
 
-				<Section title="Blog" background="greyBackground" button>
+				<Section title="Blog" background="greyBackground" link="/blog" button>
 					<div className={styles.posts}>
 						{posts.map((post) => {
 							return (
@@ -85,7 +85,7 @@ export default function Home({ courses, posts, parceiros }: HomeProps) {
 									author={post.autor}
 									date={post.date}
 									thumbnail={post.thumbnail}
-									link={post.link}
+									link={`/blog/${post.id}`}
 								/>
 							);
 						})}
