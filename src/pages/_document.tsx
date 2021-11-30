@@ -6,10 +6,7 @@ export default class MyDocument extends Document {
 			<Html lang="pt-br">
 				<Head>
 					<meta charSet="UTF-8" />
-					<meta
-						name="description"
-						content="Gestotus Consultoria e treinamentos Alagoas Brasil"
-					/>
+					<meta name="description" content="Gestotus Consultoria e Treinamentos" />
 					<link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 					<link
