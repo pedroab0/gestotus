@@ -1,5 +1,8 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { useEffect } from "react";
+
+import { hotjar } from "react-hotjar";
 
 // Swiper
 import "swiper/scss";
@@ -19,6 +22,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>Gestotus</title>
+				{useEffect(() => {
+					hotjar.initialize(2724893, 6);
+					// window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=";
+				}, [])}
 			</Head>
 			<div className={styles.appContainer}>
 				<Header />

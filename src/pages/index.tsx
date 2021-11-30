@@ -32,7 +32,6 @@ interface Post {
 	date: string;
 	autor: string;
 	thumbnail: string;
-	link: string;
 }
 
 interface Parceiros {
@@ -155,7 +154,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 			title: post.title,
 			description: post.description,
 			autor: post.autor,
-			link: post.link,
 			thumbnail: post.thumbnail,
 			date: format(parseISO(post.date), "d MMM yy", {
 				locale: ptBR,
