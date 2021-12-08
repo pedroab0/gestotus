@@ -12,7 +12,7 @@ export type CardLg = {
 
 export const CardLG = ({ thumbnail, date, title, description, author, link }: CardLg) => (
 	<div className={styles.lg}>
-		<Link href={link || "#"}>
+		<Link href={link || "#"} passHref>
 			<a>
 				<img src={thumbnail} alt="Curso fonte" />
 				<div style={{ position: "relative" }}>

@@ -6,25 +6,27 @@ export const Nav = () => (
 	<nav className={styles.menu}>
 		<ul>
 			<li>
-				<Link href="/">
+				<Link href="/" passHref replace>
 					<a>Home</a>
 				</Link>
 			</li>
 			<li>
-				<a href="#">Cursos</a>
+				<Link href="#" passHref scroll={false} replace>
+					<a>Cursos</a>
+				</Link>
 			</li>
 			<li>
-				<Link href="/blog">
+				<Link href="/blog" passHref scroll={false} replace>
 					<a>Blog</a>
 				</Link>
 			</li>
 			<li>
-				<Link href="/drlicitacao">
+				<Link href="/drlicitacao" passHref replace>
 					<a>Dr. Licitação</a>
 				</Link>
 			</li>
 			<li>
-				<Link href="/about">
+				<Link href="/about" passHref replace>
 					<a>Sobre Nós</a>
 				</Link>
 			</li>

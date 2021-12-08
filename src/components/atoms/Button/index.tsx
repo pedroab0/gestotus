@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export const Button = (props: ButtonProps) =>
 	props.submit != true ? (
-		<Link href={props.link || "#"}>
+		<Link href={props.link || "#"} passHref>
 			<a className={styles[props.buttonStyle]}>{props.label}</a>
 		</Link>
 	) : (
