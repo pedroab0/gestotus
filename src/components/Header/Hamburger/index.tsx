@@ -25,25 +25,27 @@ export const Hamburger = () => {
 			>
 				<ul>
 					<li>
-						<Link href="/">
+						<Link href="/" passHref replace>
 							<a>Home</a>
 						</Link>
 					</li>
 					<li>
-						<a href="#">Cursos</a>
+						<Link href="#" passHref replace scroll={false}>
+							<a>Cursos</a>
+						</Link>
 					</li>
 					<li>
-						<Link href="/blog">
+						<Link href="/blog" passHref replace scroll={false}>
 							<a>Blog</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/drlicitacao">
+						<Link href="/drlicitacao" passHref replace>
 							<a>Dr. Licitação</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/about">
+						<Link href="/about" passHref replace>
 							<a>Sobre nós</a>
 						</Link>
 					</li>
