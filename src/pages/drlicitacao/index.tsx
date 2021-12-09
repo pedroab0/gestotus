@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Chip from "@mui/material/Chip";
@@ -8,7 +8,7 @@ import { api } from "../../services/api";
 import { Section } from "../../components/atoms/Section";
 import styles from "./styles.module.scss";
 
-interface Categorie {
+interface category {
 	id: number;
 	label: string;
 	value: string;
@@ -22,32 +22,32 @@ interface Link {
 }
 
 interface DrLicitacaoProps {
-	categories: Categorie[];
+	categories: category[];
 	links: Link[];
 }
 
 export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
-	const [selectedCategories, setSelectedCategories] = useState<Categorie[]>([]);
+	const [selectedcategories, setSelectedcategories] = useState<category[]>([]);
 
 	const [selectedChip, setSelectedChip] = useState<boolean[]>([]);
 
-	const handleCategorieToggle = (categorieToToggle: Categorie) => () => {
-		if (selectedCategories.find((categorie) => categorie.id === categorieToToggle.id)) {
-			setSelectedCategories((selectedCategories) =>
-				selectedCategories.filter((categorie) => categorie.id !== categorieToToggle.id)
+	const handlecategoryToggle = (categoryToToggle: category) => () => {
+		if (selectedcategories.find((category) => category.id === categoryToToggle.id)) {
+			setSelectedcategories((selectedcategories) =>
+				selectedcategories.filter((category) => category.id !== categoryToToggle.id)
 			);
-			selectedChip[categorieToToggle.id] = false;
+			selectedChip[categoryToToggle.id] = false;
 		} else {
-			setSelectedCategories([...selectedCategories, categorieToToggle]);
-			selectedChip[categorieToToggle.id] = true;
+			setSelectedcategories([...selectedcategories, categoryToToggle]);
+			selectedChip[categoryToToggle.id] = true;
 		}
 	};
 
 	const selectedLinks = () => {
 		let selectedLinks: Link[] = [];
-		selectedCategories.map((categorie) => {
+		selectedcategories.map((category) => {
 			links.map((link) => {
-				if (link.value === categorie.value) {
+				if (link.value === category.value) {
 					selectedLinks.push(link);
 				}
 			});
@@ -70,15 +70,15 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 					<h2>O que está procurando ?</h2>
 
 					<div className={styles.chips}>
-						{categories.map((categorie) => {
+						{categories.map((category) => {
 							let icon: JSX.Element;
 
-							selectedChip[categorie.id]
+							selectedChip[category.id]
 								? (icon = <MdCancel color={"#4d4c4e"} size={"1.4em"} />)
 								: (icon = <MdAddCircle color={"#4d4c4e"} size={"1.4em"} />);
 
 							return (
-								<div className={styles.chip} key={categorie.id}>
+								<div className={styles.chip} key={category.id}>
 									<Chip
 										sx={{
 											backgroundColor: "#fff",
@@ -86,9 +86,9 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 											fontSize: "16px",
 											fontWeight: "500",
 										}}
-										label={categorie.label}
+										label={category.label}
 										icon={icon}
-										onClick={handleCategorieToggle(categorie)}
+										onClick={handlecategoryToggle(category)}
 									/>
 								</div>
 							);
@@ -97,10 +97,16 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 				</div>
 			</div>
 
-			<Section background="greyBackground">
+			<Section
+				background="greyBackground"
+				title={
+					selectedLinks().length >= 1
+						? "Links das categorias Selecionadas"
+						: "Selecione alguma das categorias acima"
+				}
+			>
 				<div className={styles.container}>
 					{selectedLinks().map((linkToShow) => {
-						console.log(linkToShow);
 						return (
 							<a href={linkToShow.url} key={linkToShow.id} className={styles.table}>
 								<p>{linkToShow.label}</p>
@@ -116,11 +122,11 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 export const getStaticProps: GetStaticProps = async () => {
 	const { data } = await api.get("drlicitacao");
 
-	const categories = data.categories.map((categorie: Categorie) => {
+	const categories = data.categories.map((category: category) => {
 		return {
-			id: categorie.id,
-			label: categorie.label,
-			value: categorie.value,
+			id: category.id,
+			label: category.label,
+			value: category.value,
 		};
 	});
 

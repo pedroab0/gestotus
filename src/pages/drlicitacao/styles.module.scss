@@ -34,7 +34,11 @@
 	@media (max-width: 768px) {
 		display: flex;
 		flex-direction: column;
-		height: 750px;
+		height: auto;
+
+		.chips {
+			margin-bottom: 3rem;
+		}
 	}
 }
 
