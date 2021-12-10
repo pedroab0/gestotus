@@ -8,14 +8,16 @@ export const Header = () => (
 	<header className={styles.container}>
 		<div className={styles.box}>
 			<Link href="/" scroll={false} passHref>
-				<Image
-					className={styles.logo}
-					src="/logo-transparent.png"
-					alt="Gestotus logo"
-					layout="fixed"
-					width={165}
-					height={54}
-				/>
+				<a>
+					<Image
+						className={styles.logo}
+						src="/logo-transparent.png"
+						alt="Gestotus logo"
+						layout="fixed"
+						width={165}
+						height={54}
+					/>
+				</a>
 			</Link>
 			<Hamburger />
 

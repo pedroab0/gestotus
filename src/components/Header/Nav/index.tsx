@@ -11,7 +11,7 @@ export const Nav = () => (
 				</Link>
 			</li>
 			<li>
-				<Link href="#" passHref scroll={false} replace>
+				<Link href="/#cursos" passHref scroll={false} replace>
 					<a>Cursos</a>
 				</Link>
 			</li>
