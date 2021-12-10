@@ -1,4 +1,7 @@
-main {
+.main {
+	display: grid;
+	grid-template-columns: 70% 30%;
+
 	.posts {
 		display: grid;
 		grid-template-columns: 1.5fr 1.5fr;
@@ -10,5 +13,28 @@ main {
 			row-gap: 2rem;
 			padding: 2rem;
 		}
+	}
+
+	.categoriesTitle {
+		font-size: 2.2rem;
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		margin-top: 2rem;
+
+		.chip {
+			margin: 0.4rem;
+			padding: 0.4rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }

@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { GetStaticPaths } from "next";
 import { api } from "../../../services/api";
 import styles from "./styles.module.scss";
 
@@ -32,10 +32,12 @@ export default function Post({ post }: PostProps) {
 					<div style={{ position: "relative" }}>
 						<div className={styles.title}>
 							<h1>{post.title}</h1>
-							<h5>por {post.autor}</h5>
+							<div className={styles.autor}>
+								por <h5>{post.autor}</h5>
+							</div>
 						</div>
 					</div>
-					<p>{post.text}</p>
+					<div className={styles.text} dangerouslySetInnerHTML={{ __html: post.text }} />
 				</div>
 			</main>
 		</>
@@ -58,9 +60,7 @@ type Params = {
 export const getStaticProps = async ({ params }: Params) => {
 	const { slug } = params;
 
-	console.log(slug);
-
-	const { data } = await api.get(`/blog/${slug}`);
+	const { data } = await api.get(`/articles/${slug}`);
 
 	const post = {
 		id: data.id,

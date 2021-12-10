@@ -97,14 +97,21 @@
 			margin-bottom: 1rem;
 		}
 
-		h5 {
-			font-size: 1.4rem;
+		.autor {
+			display: flex;
 			margin-left: 2.5rem;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5rem;
 			margin-bottom: 1.5rem;
+
+			h5 {
+				font-size: 1.4rem;
+			}
 		}
 	}
 
-	p {
+	.text {
 		padding: 4rem;
 		font-size: 1.4rem;
 	}
@@ -115,8 +122,10 @@
 				font-size: 3.2rem;
 			}
 
-			h5 {
-				font-size: 1.6rem;
+			.autor {
+				h5 {
+					font-size: 1.6rem;
+				}
 			}
 		}
 	}
@@ -127,12 +136,14 @@
 				font-size: 1.2rem;
 			}
 
-			h5 {
-				font-size: 1rem;
+			.autor {
+				h5 {
+					font-size: 1rem;
+				}
 			}
 		}
 
-		p {
+		.text {
 			padding: 2rem;
 		}
 	}
