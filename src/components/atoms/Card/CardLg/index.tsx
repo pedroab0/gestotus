@@ -17,7 +17,7 @@ export const CardLG = ({ thumbnail, date, title, description, author, link }: Ca
 				<img src={thumbnail} alt="Curso fonte" />
 				<div style={{ position: "relative" }}>
 					<div className={styles.dateTag}>
-						<h4>{date}</h4>
+						<h3>{date}</h3>
 					</div>
 				</div>
 				<div className={styles.lgTexts}>

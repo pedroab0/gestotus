@@ -55,7 +55,6 @@ interface HomeProps {
 }
 
 export default function Home({ courses, posts, parceiros, services }: HomeProps) {
-	console.log(services);
 	return (
 		<>
 			<Banner />
