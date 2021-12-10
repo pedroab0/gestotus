@@ -27,25 +27,25 @@ interface DrLicitacaoProps {
 }
 
 export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
-	const [selectedcategories, setSelectedcategories] = useState<category[]>([]);
+	const [selectedCategories, setSelectedCategories] = useState<category[]>([]);
 
 	const [selectedChip, setSelectedChip] = useState<boolean[]>([]);
 
-	const handlecategoryToggle = (categoryToToggle: category) => () => {
-		if (selectedcategories.find((category) => category.id === categoryToToggle.id)) {
-			setSelectedcategories((selectedcategories) =>
-				selectedcategories.filter((category) => category.id !== categoryToToggle.id)
+	const handleCategoryToggle = (categoryToToggle: category) => () => {
+		if (selectedCategories.find((category) => category.id === categoryToToggle.id)) {
+			setSelectedCategories((selectedCategories) =>
+				selectedCategories.filter((category) => category.id !== categoryToToggle.id)
 			);
 			selectedChip[categoryToToggle.id] = false;
 		} else {
-			setSelectedcategories([...selectedcategories, categoryToToggle]);
+			setSelectedCategories([...selectedCategories, categoryToToggle]);
 			selectedChip[categoryToToggle.id] = true;
 		}
 	};
 
 	const selectedLinks = () => {
 		let selectedLinks: Link[] = [];
-		selectedcategories.map((category) => {
+		selectedCategories.map((category) => {
 			links.map((link) => {
 				if (link.value === category.value) {
 					selectedLinks.push(link);
@@ -88,7 +88,7 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 										}}
 										label={category.label}
 										icon={icon}
-										onClick={handlecategoryToggle(category)}
+										onClick={handleCategoryToggle(category)}
 									/>
 								</div>
 							);

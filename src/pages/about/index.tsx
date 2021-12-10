@@ -52,7 +52,7 @@ export default function About({ about, members }: AboutProps) {
 				</div>
 			</Section>
 
-			<Section background="whiteBackground" title="Nossos Membros">
+			<Section background="greyBackground" title="Nossos Membros">
 				<Swiper
 					className={styles.swiperContainer}
 					slidesPerView={1}
