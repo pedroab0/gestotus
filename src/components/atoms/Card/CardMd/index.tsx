@@ -9,7 +9,7 @@ type CardMd = {
 	open?: boolean;
 };
 
-export const CardMD = ({ thumbnail, title, description, link, open }: CardMd) => 
+export const CardMD = ({ thumbnail, title, description, link, open }: CardMd) => (
 	<div className={styles.md}>
 		<img src={thumbnail} alt="Curso fonte" />
 		<div className={styles.text}>
@@ -18,7 +18,8 @@ export const CardMD = ({ thumbnail, title, description, link, open }: CardMd) =>
 		</div>
 		<Button
 			buttonStyle={open ? "wide" : "disabled"}
-			label={open ? "Matrículas abertas" : "Matrículas Fechadas"}
+			label={open ? "Matrículas abertas" : "Matrículas fechadas"}
 			link={link}
 		/>
 	</div>
+);

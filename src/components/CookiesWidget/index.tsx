@@ -5,15 +5,15 @@ export const CookiesWidget = () => {
 	const [cookiesAgree, setCookiesAgree] = useState<string | null>("false");
 
 	useEffect(() => {
-		if (!localStorage.getItem("cookiesAgree")) {
-			localStorage.setItem("cookiesAgree", "false");
+		if (!localStorage.getItem("@cookiesAgree")) {
+			localStorage.setItem("@cookiesAgree", "false");
 		}
 
-		setCookiesAgree(localStorage.getItem("cookiesAgree"));
+		setCookiesAgree(localStorage.getItem("@cookiesAgree"));
 	}, []);
 
 	function handleClick() {
-		localStorage.setItem("cookiesAgree", "true");
+		localStorage.setItem("@cookiesAgree", "true");
 		setCookiesAgree("true");
 	}
 

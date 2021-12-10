@@ -30,7 +30,7 @@ export const Hamburger = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="#" passHref replace scroll={false}>
+						<Link href="/#cursos" passHref replace scroll={false}>
 							<a>Cursos</a>
 						</Link>
 					</li>

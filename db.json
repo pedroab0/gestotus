@@ -1,10 +1,36 @@
 {
 	"home": {
+		"services": [
+			{
+				"id": 1,
+				"value": "gestao-empresarial",
+				"title": "Diagnósticos e Estratégias Empresariais",
+				"description": "<ul><div><li>- Diagnóstico e Planejamento Estratégico</li><li>- Modelagem de Negócios Locais</li><li>- Consultoria em Tecnologia da Informação</li></div></ul>"
+			},
+			{
+				"id": 2,
+				"value": "gestao-empresarial",
+				"title": "Projetos, Convênios e Pesquisas",
+				"description": "<ul><div><li>- Estudos de Análise e Viabilidade Econômico-financeira</li><li>- Interpretação, elaboração, gestão, execução e prestação de contas de editais de fomento</li></ul>"
+			},
+			{
+				"id": 3,
+				"value": "gestao-publica",
+				"title": "Compras Públicas",
+				"description": "<ul><div><li>- Elaboração e Gestão de Projetos</li><li>- Consultoria de Licitações e Contratos</li><li>- Gestão, capacitação e desenvolvimento de compras públicas</li></div></ul>"
+			},
+			{
+				"id": 4,
+				"value": "gestao-publica",
+				"title": "Desenvolvimento  Regional",
+				"description": "<ul><div><li>- Construção de cenários para o desenvolvimento local</li><li>- Planejamento para trabalho com Agricultura Familiar, PAA e PNAE</li></div></ul>"
+			}
+		],
 		"cursos": [
 			{
 				"id": "1",
 				"title": "Curso - 1",
-				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 				"open": true,
 				"thumbnail": "/partners.jpg",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
@@ -12,7 +38,7 @@
 			{
 				"id": "2",
 				"title": "Curso - 2",
-				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 				"open": true,
 				"thumbnail": "/partners.jpg",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
@@ -20,7 +46,7 @@
 			{
 				"id": "3",
 				"title": "Curso - 3",
-				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 				"open": false,
 				"thumbnail": "/partners.jpg",
 				"link": ""
@@ -30,7 +56,7 @@
 			{
 				"id": "como-ter-uma-boa-gestao-publica",
 				"title": "Como ter uma boa Gestão Pública",
-				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 				"autor": "Pedro Barbosa",
 				"thumbnail": "/partners2.jpg",
 				"date": "2021-01-22 16:35:40"
@@ -38,7 +64,7 @@
 			{
 				"id": "como-ter-uma-boa-gestao-empresarial",
 				"title": "Como ter uma boa Gestão Empresarial",
-				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 				"autor": "Pedro Barbosa",
 				"thumbnail": "/partners2.jpg",
 				"date": "2021-01-15 13:00:00"
@@ -57,11 +83,6 @@
 			},
 			{
 				"id": "3",
-				"thumbnail": "/licitotus-wide-logo.png",
-				"link": "https://github.com/pedrobarbosa0/gestotus"
-			},
-			{
-				"id": "4",
 				"thumbnail": "/doutor-licitacao-wide.png",
 				"link": "https://github.com/pedrobarbosa0/gestotus"
 			}
@@ -70,7 +91,7 @@
 
 	"about": {
 		"about": {
-			"text": "A GESTOTUS Consultoria, Assessoria e Treinamento criada em 2017, atua em serviços de consultoria, assessoria e capacitação voltados para gestão pública e empresarial, com expertise em interpretação, elaboração, gestão, execução e prestação de contas de editais; diagnóstico, pesquisa e mapeamento de vocação produtiva; construção de cenários para o desenvolvimento local; elaboração e monitoramento de indicadores; modelagem de negócios locais; gestão de contratos, instrução e fluxo processual; desenho/estrutura de Lei Delegada; licitação; gestão, capacitação e desenvolvimento de compras públicas; diagnóstico e planejamento empresarial.",
+			"text": "A GESTOTUS Consultoria, Assessoria e Treinamento criada em 2017, atua em serviços de consultoria, assessoria e capacitação voltados para gestão pública e empresarial.",
 			"image": "/members.png"
 		},
 		"members": [
@@ -78,14 +99,14 @@
 				"id": 1,
 				"name": "Tatyana Lima",
 				"role": "Sócia Administrativa",
-				"description": "Economista, docente, consultora nas áreas de inovação e diagnóstico e estratégia empresarial, com experiência na elaboração, gestão, execução e prestação de contas de projetos empresariais e públicos.",
+				"description": "Economista, docente, consultora nas áreas de inovação e diagnóstico e estratégia empresarial.",
 				"thumbnail": "/tatyanalima.jpeg"
 			},
 			{
 				"id": 2,
 				"name": "João Geraldo",
 				"role": "Sócio Administrativo",
-				"description": "Administrador, docente, consultor em desenvolvimento organizacional, planos de negócios, planos tecnológicos, científicos, sustentáveis e de inovação para setor público e empresarial.",
+				"description": "Administrador, docente, consultor em desenvolvimento organizacional, planos de negócios, tecnológicos, científicos, sustentáveis e de inovação para setor público e empresarial.",
 				"thumbnail": "/joao-geraldo.jpg"
 			},
 			{
@@ -99,7 +120,7 @@
 				"id": 4,
 				"name": "Rúbia Barbalho",
 				"role": "Sócia",
-				"description": "Pedagoga, consultora com experiências nas áreas de compras públicas rurais, PNAE, negócios no campo; apicultura; desenvolvimento territorial e análise de mercado para negócios.",
+				"description": "Pedagoga, consultora com experiências nas áreas de compras públicas rurais, PNAE, negócios no campo, apicultura e desenvolvimento territorial.",
 				"thumbnail": "/rubia-barbalho.jpg"
 			},
 			{
@@ -120,7 +141,7 @@
 				"id": 7,
 				"name": "Mell Bezerra",
 				"role": "Sócia",
-				"description": "Gestora Pública e Turismóloga, consultora de Turismo, Desenvolvimento Sustentável, Gestão de Empresas e Estratégia de Negócios. Com experiência em elaboração de Plano de Desenvolvimento Municipal.",
+				"description": "Gestora Pública e Turismóloga. Com experiência em elaboração de Plano de Desenvolvimento Municipal.",
 				"thumbnail": "/mellbezerra.jpeg"
 			}
 		]
@@ -159,67 +180,84 @@
 			},
 			{
 				"id": 3,
-				"label": "CERTIFICADO DE REGULARIDADE DE FGTS",
-				"value": "certidoes-federais",
-				"url": "https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf"
-			},
-			{
-				"id": 4,
 				"label": "ALAGOAS – CND ESTADUAL",
 				"value": "certidoes-estaduais",
 				"url": "https://contribuinte.sefaz.al.gov.br/certidao/#/emitircertidao"
 			},
 			{
-				"id": 5,
+				"id": 4,
 				"label": "PERNAMBUCO - CND ESTADUAL",
 				"value": "certidoes-estaduais",
 				"url": "http://efisco.sefaz.pe.gov.br/sfi_trb_gpf/PREmitirCertidaoNegativaNarrativaDebitoFiscal"
 			},
 			{
-				"id": 6,
-				"label": "SERGIPE - CND ESTADUAL",
-				"value": "certidoes-estaduais",
-				"url": "http://www.sefaz.se.gov.br/SitePages/servico.aspx?cod=10&Url=https%3a//security.sefaz.se.gov.br/internet/publico/cleanProcess.jsp&AppName=SIC&TransId=T24070&CancelUrl=paginaInicial.jsp"
-			},
-			{
-				"id": 7,
+				"id": 5,
 				"label": "RECIFE - CND MUNICIPAL",
 				"value": "certidoes-municipais",
 				"url": "https://recifeemdia.recife.pe.gov.br/emissaoCertidao/4"
 			},
 			{
-				"id": 8,
+				"id": 6,
 				"label": "ARACAJU - CND MUNICIPAL",
 				"value": "certidoes-municipais",
 				"url": "https://fazenda.aracaju.se.gov.br/#/publica/contribuinte/certidao-negativa"
-			},
-			{
-				"id": 9,
-				"label": "RECIFE - AUTENTICAÇÃO CND MUNICIPAL",
-				"value": "certidoes-municipais",
-				"url": "https://recifeemdia.recife.pe.gov.br/autenticidadeCertidao"
 			}
 		]
 	},
 
-	"blog": [
+	"blog": {
+		"categories": [
+			{
+				"id": 1,
+				"label": "Gestão Empresarial"
+			},
+			{
+				"id": 2,
+				"label": "Gestão Pública"
+			}
+		],
+		"posts": [
+			{
+				"id": "como-ter-uma-boa-gestao-publica",
+				"title": "Como ter uma boa Gestão Pública",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
+				"autor": "Pedro Barbosa",
+				"thumbnail": "/partners2.jpg",
+				"date": "2021-01-22 16:35:40",
+				"category": "Gestão Pública"
+			},
+			{
+				"id": "como-ter-uma-boa-gestao-empresarial",
+				"title": "Como ter uma boa Gestão Empresarial",
+				"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
+				"autor": "Pedro Barbosa",
+				"thumbnail": "/partners2.jpg",
+				"date": "2021-01-15 13:00:00",
+				"category": "Gestão Empresarial"
+			}
+		]
+	},
+
+	"articles": [
 		{
 			"id": "como-ter-uma-boa-gestao-publica",
 			"title": "Como ter uma boa Gestão Pública",
-			"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+			"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 			"autor": "Pedro Barbosa",
 			"thumbnail": "/partners2.jpg",
 			"date": "2021-01-22 16:35:40",
-			"text": "The standard Lorem Ipsum passage, used since the 1500s<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>Section 1.10.32 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC<br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+			"category": "Gestão Pública",
+			"text": "The standard Lorem Ipsum passage, used since the 1500s<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>Section 1.10.32 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC<br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 		},
 		{
 			"id": "como-ter-uma-boa-gestao-empresarial",
 			"title": "Como ter uma boa Gestão Empresarial",
-			"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.",
+			"description": "Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim.",
 			"autor": "Pedro Barbosa",
 			"thumbnail": "/partners2.jpg",
 			"date": "2021-01-15 13:00:00",
-			"text": "The standard Lorem Ipsum passage, used since the 1500s<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>Section 1.10.32 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC<br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+			"category": "Gestão Empresarial",
+			"text": "The standard Lorem Ipsum passage, used since the 1500s<br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>Section 1.10.32 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC<br/>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 		}
 	]
 }
