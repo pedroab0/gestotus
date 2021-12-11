@@ -11,7 +11,9 @@ interface ButtonProps {
 export const Button = (props: ButtonProps) =>
 	props.submit != true ? (
 		<Link href={props.link || "#"} passHref>
-			<a className={styles[props.buttonStyle]}>{props.label}</a>
+			<a className={styles[props.buttonStyle]} target="_blank" rel="noreferrer">
+				{props.label}
+			</a>
 		</Link>
 	) : (
 		<button type="submit" className={styles[props.buttonStyle]}>
