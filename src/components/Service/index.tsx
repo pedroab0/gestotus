@@ -35,7 +35,7 @@ export const Service = ({ id, title, description }: Service) => {
 			</AccordionSummary>
 			<AccordionDetails
 				sx={{
-					backgroundColor: "#ecedec",
+					backgroundColor: "#f8f8f8",
 					padding: "8px 16px 16px",
 					fontFamily: "Montserrat, sans-serif",
 				}}

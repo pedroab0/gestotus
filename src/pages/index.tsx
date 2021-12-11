@@ -115,7 +115,7 @@ export default function Home({ courses, posts, parceiros, services }: HomeProps)
 				) : null}
 
 				{posts.length > 0 ? (
-					<Section title="Blog" background="greyBackground" link="/blog" button>
+					<Section title="Blog" background="lightBackground" link="/blog" button>
 						<div className={styles.posts}>
 							{posts.map((post) => {
 								return (
@@ -136,7 +136,7 @@ export default function Home({ courses, posts, parceiros, services }: HomeProps)
 				) : null}
 
 				{parceiros.length > 0 ? (
-					<Section title="Parceiros" background="whiteBackground">
+					<Section title="Parceiros" background="greyBackground">
 						<Swiper
 							className={styles.swiperContainer}
 							slidesPerView={1}
