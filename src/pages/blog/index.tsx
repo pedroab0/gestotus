@@ -93,19 +93,26 @@ export default function Blog({ posts, categories }: BlogProps) {
 					<div className={styles.chips}>
 						{categories.map((category) => {
 							let icon: JSX.Element;
+							let chipBackgroundColor: string;
+							let chipColor: string;
 
 							selectedChip[category.id]
-								? (icon = <MdCancel color={"#4d4c4e"} size={"1.4em"} />)
-								: (icon = <MdAddCircle color={"#4d4c4e"} size={"1.4em"} />);
+								? ((icon = <MdCancel color={"#fdfcfc"} size={"1.4em"} />),
+								  (chipBackgroundColor = "rgba(51, 51, 51, 0.7)"),
+								  (chipColor = "rgba(255, 255, 255, 0.8)"))
+								: ((icon = <MdAddCircle color={"#4d4c4e"} size={"1.4em"} />),
+								  (chipBackgroundColor = "#fff"),
+								  (chipColor = "rgba(0, 0, 0, 0.8)"));
 
 							return (
 								<div className={styles.chip} key={category.id}>
 									<Chip
 										sx={{
-											backgroundColor: "#fff",
+											backgroundColor: `${chipBackgroundColor}`,
 											fontFamily: "Montserrat, sans-serif",
 											fontSize: "16px",
 											fontWeight: "500",
+											color: `${chipColor}`,
 										}}
 										label={category.label}
 										icon={icon}
