@@ -44,7 +44,7 @@
 	background-color: var(--grey-100);
 }
 
-.whiteBackground {
+.lightBackground {
 	@extend .container;
-	background-color: var(--white);
+	background-color: var(--grey-50);
 }
