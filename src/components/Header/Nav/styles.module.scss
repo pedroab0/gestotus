@@ -28,6 +28,14 @@
 		}
 	}
 
+	.active {
+		padding-bottom: 0.4rem;
+
+		border-bottom: 3px solid var(--blue-100);
+
+		font-weight: 600;
+	}
+
 	@media (max-width: 1024px) {
 		display: none;
 	}
