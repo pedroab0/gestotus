@@ -9,8 +9,8 @@ interface CardXs {
 
 export const CardXS = ({ thumbnail, link }: CardXs) => (
 	<div className={styles.xs}>
-		<Link href={link || "#"}>
-			<a>
+		<Link href={link || "#"} passHref>
+			<a target="_blank" rel="noreferrer">
 				<img src={thumbnail} alt="Curso fonte" />
 			</a>
 		</Link>
