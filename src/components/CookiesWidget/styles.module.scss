@@ -51,8 +51,9 @@
 @media (max-width: 1024px) {
 	.box {
 		width: unset;
+		max-width: 85%;
 		flex-direction: column;
-		margin: 40px;
+		margin: 40px 0;
 		row-gap: 20px;
 		padding: 20px;
 	}
