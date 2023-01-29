@@ -1,0 +1,17 @@
+query About {
+  about(where: {slug: "about-us"}) {
+    image {
+      url
+    }
+    text
+  }
+  members {
+    id
+    name
+    role
+    description
+    picture {
+      url
+    }
+  }
+}

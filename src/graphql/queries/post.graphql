@@ -1,0 +1,18 @@
+query Post($slug: String) {
+	post(where: { slug: $slug }) {
+		id
+		slug
+		title
+		description
+		author
+		category
+		date
+		thumbnail {
+			url
+		}
+		content {
+			html
+		}
+	}
+}
+

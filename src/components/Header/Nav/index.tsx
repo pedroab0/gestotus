@@ -5,8 +5,6 @@ import styles from "./styles.module.scss";
 export const Nav = () => {
 	const router = useRouter();
 
-	console.log(router.pathname);
-
 	return (
 		<nav className={styles.menu}>
 			<ul>
@@ -36,7 +34,7 @@ export const Nav = () => {
 				</li>
 				<li>
 					<Link href="/about" passHref replace>
-						<a className={router.pathname === "/about" ? styles.active : ""}>
+						<a className={router.pathname === "/about-us" ? styles.active : ""}>
 							Sobre Nós
 						</a>
 					</Link>

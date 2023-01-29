@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
 import styles from "./styles.module.scss";
 
 interface SocialProps {
@@ -37,3 +38,4 @@ export const Social = ({ justify }: SocialProps) => (
 		</a>
 	</div>
 );
+

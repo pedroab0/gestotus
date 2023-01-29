@@ -1,3 +1,4 @@
+// dependencies
 import { GetStaticProps } from "next";
 import Image from "next/image";
 
@@ -6,44 +7,36 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 SwiperCore.use([Autoplay, Pagination]);
 
+// graphql
+import { AboutDocument, useAboutQuery } from "../../generated/graphql";
+import { client, ssrCache } from "../../lib/urql";
+
+// components
 import { Card } from "../../components/atoms/Card";
 import { Section } from "../../components/atoms/Section";
 import { Social } from "../../components/atoms/Social";
-import { api } from "../../services/api";
 
+// styles
 import styles from "./styles.module.scss";
 
-interface About {
-	text: string;
-	image: string;
-}
+export default function About() {
+	const [{ data }] = useAboutQuery();
 
-interface Member {
-	id: number;
-	name: string;
-	role: string;
-	description: string;
-	thumbnail: string;
-}
+	if (!data) return;
 
-interface AboutProps {
-	about: About;
-	members: Member[];
-}
-
-export default function About({ about, members }: AboutProps) {
+	const { about, members } = data;
 	return (
 		<main>
 			<Section background="greyBackground">
 				<div className={styles.about}>
 					<div className={styles.text}>
 						<h3>QUEM SOMOS</h3>
-						<p>{about.text}</p>
+						<p>{about?.text}</p>
 						<Social justify="left" />
 					</div>
 					<div className={styles.image}>
 						<Image
-							src={about.image}
+							src={about?.image.url || ''}
 							alt="Membros da Gestotus"
 							height={300}
 							width={500}
@@ -86,7 +79,7 @@ export default function About({ about, members }: AboutProps) {
 								<Card
 									key={member.id}
 									cardType="SM"
-									thumbnail={member.thumbnail}
+									thumbnail={member.picture.url}
 									name={member.name}
 									role={member.role}
 									description={member.description}
@@ -101,24 +94,11 @@ export default function About({ about, members }: AboutProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { data } = await api.get("about");
-
-	const about: About = data.about;
-
-	const members = data.members.map((member: Member) => {
-		return {
-			id: member.id,
-			name: member.name,
-			role: member.role,
-			description: member.description,
-			thumbnail: member.thumbnail,
-		};
-	});
+	await client.query(AboutDocument, {}).toPromise();
 
 	return {
 		props: {
-			about,
-			members: members,
+			urqlState: ssrCache.extractData()
 		},
 		revalidate: 60 * 60 * 8,
 	};

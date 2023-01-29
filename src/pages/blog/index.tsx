@@ -1,3 +1,4 @@
+// dependencies
 import { useState } from "react";
 import { GetStaticProps } from "next";
 import { format, parseISO } from "date-fns";
@@ -5,59 +6,74 @@ import ptBR from "date-fns/locale/pt-BR";
 import Chip from "@mui/material/Chip";
 import { MdCancel, MdAddCircle } from "react-icons/md";
 
+// graphql
+import { ArticleCategory, BlogDocument, useBlogQuery } from "../../generated/graphql";
+import { client, ssrCache } from "../../lib/urql";
+
+// components
 import { Card } from "../../components/atoms/Card";
 import { Section } from "../../components/atoms/Section";
 import { Banner } from "../../components/Banner";
-import { api } from "../../services/api";
 
+// styles
 import styles from "./styles.module.scss";
 
-interface Category {
-	id: number;
-	label: string;
-}
+export default function Blog() {
+	const [{ data }] = useBlogQuery();
+	const categories = data?.articleCategories;
+	const posts = data?.posts;
 
-interface Post {
-	id: string;
-	title: string;
-	description: string;
-	date: string;
-	autor: string;
-	thumbnail: string;
-	category: string;
-}
+	const [selectedCategories, setSelectedCategories] = useState<
+		Pick<ArticleCategory, "__typename" | "id" | "categoryId" | "category" | "label">[]
+	>([]);
+	const [selectedChips, setSelectedChips] = useState<boolean[]>(
+		() => categories?.map(() => false) || []
+	);
 
-interface BlogProps {
-	posts: Post[];
-	categories: Category[];
-}
+	if (!posts || !categories) return <></>;
 
-export default function Blog({ posts, categories }: BlogProps) {
-	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+	const handleCategoryToggle =
+		(
+			categoryToToggle: Pick<
+				ArticleCategory,
+				"__typename" | "id" | "categoryId" | "category" | "label"
+			>
+		) =>
+		() => {
+			if (
+				selectedCategories.find((category) => category.categoryId === categoryToToggle.categoryId)
+			) {
+				setSelectedCategories((selectedCategories) =>
+					selectedCategories.filter(
+						(category) => category.categoryId !== categoryToToggle.categoryId
+					)
+				);
 
-	const [selectedChip, setSelectedChip] = useState<boolean[]>([]);
+				const newSelectedChips = [...selectedChips];
+				newSelectedChips[categoryToToggle.categoryId - 1] = false;
+				setSelectedChips(newSelectedChips);
+			} else {
+				setSelectedCategories([...selectedCategories, categoryToToggle]);
 
-	const handleCategoryToggle = (categoryToToggle: Category) => () => {
-		if (selectedCategories.find((category) => category === categoryToToggle.label)) {
-			setSelectedCategories((selectedCategories) =>
-				selectedCategories.filter((category) => category !== categoryToToggle.label)
-			);
-			selectedChip[categoryToToggle.id] = false;
-		} else {
-			setSelectedCategories([...selectedCategories, categoryToToggle.label]);
-			selectedChip[categoryToToggle.id] = true;
-		}
-	};
+				const newSelectedChips = [...selectedChips];
+				newSelectedChips[categoryToToggle.categoryId - 1] = true;
+				setSelectedChips(newSelectedChips);
+			}
+		};
 
 	const selectedPosts = () => {
-		let selectedPosts: Post[] = posts;
+		let selectedPosts: typeof posts = posts;
+
 		if (selectedCategories.length > 0) {
 			selectedPosts = [];
+
 			selectedCategories.map((category) => {
-				posts.map((post) => {
-					if (post.category === category) {
-						selectedPosts.push(post);
-					}
+				posts?.map((post) => {
+					post.category.map((postCategory) => {
+						if (postCategory === category.category) {
+							selectedPosts?.push(post);
+						}
+					});
 				});
 			});
 		}
@@ -71,17 +87,19 @@ export default function Blog({ posts, categories }: BlogProps) {
 			<main className={styles.main}>
 				<Section background="greyBackground" title="Artigos Selecionados">
 					<div className={styles.posts}>
-						{selectedPosts().map((post) => {
+						{selectedPosts()?.map((post) => {
 							return (
 								<Card
 									cardType="LG"
 									key={post.id}
 									title={post.title}
 									description={post.description}
-									author={post.autor}
-									date={post.date}
-									thumbnail={post.thumbnail}
-									link={`/blog/posts/${post.id}`}
+									author={post.author}
+									date={format(parseISO(post.date), "d MMM yy", {
+										locale: ptBR,
+									})}
+									thumbnail={post.thumbnail.url}
+									link={`/blog/posts/${post.slug}`}
 								/>
 							);
 						})}
@@ -91,12 +109,12 @@ export default function Blog({ posts, categories }: BlogProps) {
 				<Section background="greyBackground">
 					<h2 className={styles.categoriesTitle}>Selecione as Categorias</h2>
 					<div className={styles.chips}>
-						{categories.map((category) => {
+						{categories?.map((category) => {
 							let icon: JSX.Element;
 							let chipBackgroundColor: string;
 							let chipColor: string;
 
-							selectedChip[category.id]
+							selectedChips[category.categoryId - 1]
 								? ((icon = <MdCancel color={"#fdfcfc"} size={"1.4em"} />),
 								  (chipBackgroundColor = "rgba(51, 51, 51, 0.7)"),
 								  (chipColor = "rgba(255, 255, 255, 0.8)"))
@@ -129,34 +147,13 @@ export default function Blog({ posts, categories }: BlogProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { data } = await api.get("blog");
-
-	const posts = data.posts.map((post: Post) => {
-		return {
-			id: post.id,
-			title: post.title,
-			description: post.description,
-			autor: post.autor,
-			thumbnail: post.thumbnail,
-			date: format(parseISO(post.date), "d MMM yy", {
-				locale: ptBR,
-			}),
-			category: post.category,
-		};
-	});
-
-	const categories = data.categories.map((category: Category) => {
-		return {
-			id: category.id,
-			label: category.label,
-		};
-	});
+	await client.query(BlogDocument, {}).toPromise();
 
 	return {
 		props: {
-			posts: posts,
-			categories: categories,
+			urqlState: ssrCache.extractData(),
 		},
 		revalidate: 60 * 60 * 8,
 	};
 };
+

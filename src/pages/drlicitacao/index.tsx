@@ -1,81 +1,96 @@
+// dependencies
 import { useState } from "react";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Chip from "@mui/material/Chip";
 import { MdCancel, MdAddCircle } from "react-icons/md";
 
-import { api } from "../../services/api";
+// graphql
+import {
+	DrLicitacaoCategory,
+	DrLicitacaoDocument,
+	useDrLicitacaoQuery,
+} from "../../generated/graphql";
+import { client, ssrCache } from "../../lib/urql";
+
+// components
 import { Section } from "../../components/atoms/Section";
+
+// styles
 import styles from "./styles.module.scss";
 
-interface category {
-	id: number;
-	label: string;
-	value: string;
-}
+export default function DrLicitacao() {
+	const [{ data }] = useDrLicitacaoQuery();
 
-interface Link {
-	id: number;
-	label: string;
-	value: string;
-	url: string;
-}
+	const categories = data?.drLicitacaoCategories;
+	const links = data?.drLicitacaoLinks;
 
-interface DrLicitacaoProps {
-	categories: category[];
-	links: Link[];
-}
+	const [selectedCategories, setSelectedCategories] = useState<
+		Pick<DrLicitacaoCategory, "__typename" | "id" | "categoryId" | "type" | "label">[]
+	>([]);
+	const [selectedChips, setSelectedChips] = useState<boolean[]>(
+		() => categories?.map(() => false) || []
+	);
 
-export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
-	const [selectedCategories, setSelectedCategories] = useState<category[]>([]);
+	if (!links || !categories) return null;
 
-	const [selectedChip, setSelectedChip] = useState<boolean[]>([]);
+	const handleCategoryToggle =
+		(
+			categoryToToggle: Pick<
+				DrLicitacaoCategory,
+				"__typename" | "id" | "categoryId" | "type" | "label"
+			>
+		) =>
+		() => {
+			if (
+				selectedCategories?.find((category) => category.categoryId === categoryToToggle.categoryId)
+			) {
+				setSelectedCategories((selectedCategories) =>
+					selectedCategories?.filter((category) => category.id !== categoryToToggle.id)
+				);
 
-	const handleCategoryToggle = (categoryToToggle: category) => () => {
-		if (selectedCategories.find((category) => category.id === categoryToToggle.id)) {
-			setSelectedCategories((selectedCategories) =>
-				selectedCategories.filter((category) => category.id !== categoryToToggle.id)
-			);
-			selectedChip[categoryToToggle.id] = false;
-		} else {
-			setSelectedCategories([...selectedCategories, categoryToToggle]);
-			selectedChip[categoryToToggle.id] = true;
-		}
-	};
+				const newSelectedChips = [...selectedChips];
+				newSelectedChips[categoryToToggle.categoryId - 1] = false;
+				setSelectedChips(newSelectedChips);
+			} else {
+				setSelectedCategories([...selectedCategories, categoryToToggle]);
+
+				const newSelectedChips = [...selectedChips];
+				newSelectedChips[categoryToToggle.categoryId - 1] = true;
+				setSelectedChips(newSelectedChips);
+			}
+		};
 
 	const selectedLinks = () => {
-		let selectedLinks: Link[] = [];
-		selectedCategories.map((category) => {
-			links.map((link) => {
-				if (link.value === category.value) {
-					selectedLinks.push(link);
+		if (!selectedCategories || selectedCategories.length === 0) return links;
+
+		let selectedLinks: typeof links = [];
+		selectedCategories?.map((category) => {
+			links?.map((link) => {
+				if (link.category === category.type) {
+					selectedLinks?.push(link);
 				}
 			});
 		});
+
 		return selectedLinks;
 	};
 
 	return (
 		<>
 			<div className={styles.banner}>
-				<Image
-					src="/doutor-licitacao.png"
-					width={350}
-					height={350}
-					alt="Dr. Licitação"
-					priority
-				/>
+				<Image src="/doutor-licitacao.png" width={350} height={350} alt="Dr. Licitação" priority />
 
 				<div className={styles.box}>
 					<h2>O que está procurando ?</h2>
 
 					<div className={styles.chips}>
-						{categories.map((category) => {
+						{categories?.map((category) => {
 							let icon: JSX.Element;
 							let chipBackgroundColor: string;
 							let chipColor: string;
 
-							selectedChip[category.id]
+							selectedChips[category.categoryId - 1]
 								? ((icon = <MdCancel color={"#fdfcfc"} size={"1.4em"} />),
 								  (chipBackgroundColor = "rgba(51, 51, 51, 0.7)"),
 								  (chipColor = "rgba(255, 255, 255, 0.8)"))
@@ -133,30 +148,13 @@ export default function DrLicitacao({ categories, links }: DrLicitacaoProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { data } = await api.get("drlicitacao");
-
-	const categories = data.categories.map((category: category) => {
-		return {
-			id: category.id,
-			label: category.label,
-			value: category.value,
-		};
-	});
-
-	const links = data.links.map((link: Link) => {
-		return {
-			id: link.id,
-			label: link.label,
-			value: link.value,
-			url: link.url,
-		};
-	});
+	await client.query(DrLicitacaoDocument, {}).toPromise();
 
 	return {
 		props: {
-			categories: categories,
-			links: links,
+			urqlState: ssrCache.extractData(),
 		},
 		revalidate: 60 * 60 * 8,
 	};
 };
+

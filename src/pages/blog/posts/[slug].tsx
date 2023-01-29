@@ -1,43 +1,55 @@
+// dependencies
+import { GetStaticPaths } from "next";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
-import { GetStaticPaths } from "next";
-import { api } from "../../../services/api";
+
+// graphql
+import { PostDocument, usePostQuery } from "../../../generated/graphql";
+import { client, ssrCache } from "../../../lib/urql";
+
+// styles
 import styles from "./styles.module.scss";
 
-interface Post {
-	id: string;
-	title: string;
-	description: string;
-	date: string;
-	autor: string;
-	thumbnail: string;
-	text: string;
-}
-
 interface PostProps {
-	post: Post;
+	slug: string;
 }
 
-export default function Post({ post }: PostProps) {
+export default function Post({ slug }: PostProps) {
+	const [{ data }] = usePostQuery({
+		variables: {
+			slug: slug,
+		},
+	});
+
+	if (!data) return <></>;
+	const { post } = data;
+
 	return (
 		<>
 			<main className={styles.postContainer}>
 				<div className={styles.post}>
 					<div style={{ position: "relative" }}>
 						<div className={styles.dateTag}>
-							<h4>{post.date}</h4>
+							<h4>
+								{format(parseISO(post?.date), "d MMM yy", {
+									locale: ptBR,
+								})}
+							</h4>
 						</div>
 					</div>
-					<img src={post.thumbnail} alt="Imagem ilustrativa" />
+					<img src={post?.thumbnail.url} alt="Imagem ilustrativa" />
 					<div style={{ position: "relative" }}>
 						<div className={styles.title}>
-							<h1>{post.title}</h1>
+							<h1>{post?.title}</h1>
 							<div className={styles.autor}>
-								por <h5>{post.autor}</h5>
+								por <h5>{post?.author}</h5>
 							</div>
 						</div>
 					</div>
-					<div className={styles.text} dangerouslySetInnerHTML={{ __html: post.text }} />
+					<div
+						className={styles.text}
+						dangerouslySetInnerHTML={{ __html: post?.content.html || "" }}
+					/>
 				</div>
 			</main>
 		</>
@@ -60,24 +72,14 @@ type Params = {
 export const getStaticProps = async ({ params }: Params) => {
 	const { slug } = params;
 
-	const { data } = await api.get(`/articles/${slug}`);
-
-	const post = {
-		id: data.id,
-		title: data.title,
-		description: data.description,
-		autor: data.autor,
-		thumbnail: data.thumbnail,
-		text: data.text,
-		date: format(parseISO(data.date), "d MMM yy", {
-			locale: ptBR,
-		}),
-	};
+	await client.query(PostDocument, { slug: slug }).toPromise();
 
 	return {
 		props: {
-			post,
+			urqlState: ssrCache.extractData(),
+			slug,
 		},
 		revalidate: 60 * 60 * 24, // 24hrs
 	};
 };
+

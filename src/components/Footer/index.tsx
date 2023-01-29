@@ -34,7 +34,7 @@ export const Footer = () =>
 			</ul>
 		</div>
 
-		<div className={styles.form}>
+		{/* <div className={styles.form}>
 			<form action="submit">
 				<p>Envie-nos um email</p>
 				<div className={styles.input}>
@@ -44,5 +44,5 @@ export const Footer = () =>
 				</div>
 				<Button buttonStyle="submit" submit label="Enviar" />
 			</form>
-		</div>
+		</div> */}
 	</footer>

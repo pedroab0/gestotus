@@ -1,0 +1,21 @@
+query Blog {
+	posts(orderBy: publishedAt_DESC) {
+		id
+		slug
+		title
+		description
+		author
+		category
+		date
+		thumbnail {
+			url
+		}
+	}
+	articleCategories {
+		id
+		categoryId
+		category
+		label
+	}
+}
+

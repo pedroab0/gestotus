@@ -1,0 +1,36 @@
+query Home {
+  services {
+    id
+    type
+    title
+    description
+  }
+  courses(last: 3, orderBy: publishedAt_DESC) {
+    id
+    title
+    description
+    isAvailable
+    url
+    thumbnail {
+      url
+    }
+  }
+  posts(last: 2, orderBy: publishedAt_DESC) {
+    id
+    slug
+    title
+    description
+    author
+    date
+    thumbnail {
+      url
+    }
+  }
+  partnerCompanies {
+    id
+    url
+    thumbnail {
+      url
+    }
+  }
+}

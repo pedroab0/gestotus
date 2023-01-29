@@ -13,3 +13,4 @@ export const DrLicitacao = () => (
 		<Button label="Saiba Mais" buttonStyle="simple" link="/drlicitacao" />
 	</div>
 );
+

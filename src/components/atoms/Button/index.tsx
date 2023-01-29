@@ -8,15 +8,16 @@ interface ButtonProps {
 	link?: string;
 }
 
-export const Button = (props: ButtonProps) =>
-	props.submit != true ? (
-		<Link href={props.link || "#"} passHref>
-			<a className={styles[props.buttonStyle]} rel="noreferrer">
-				{props.label}
+export const Button = ({ buttonStyle, label, link, submit }: ButtonProps) =>
+	submit != true ? (
+		<Link href={link || "#"} passHref>
+			<a className={styles[buttonStyle]} rel="noreferrer">
+				{label}
 			</a>
 		</Link>
 	) : (
-		<button type="submit" className={styles[props.buttonStyle]}>
-			{props.label}
+		<button type="submit" className={styles[buttonStyle]}>
+			{label}
 		</button>
 	);
+

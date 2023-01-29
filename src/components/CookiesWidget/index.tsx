@@ -21,14 +21,17 @@ export const CookiesWidget = () => {
 		<div className={styles.container}>
 			<div className={styles.box}>
 				<p className={styles.text}>
-					Utilizamos cookies próprios e de terceiros para melhorar a sua experiência e os
-					nossos serviços, analisando a navegação de nosso site. Ao continuar a navegação,
-					consideramos que você aceita a sua utilização.
+					Utilizamos cookies próprios e de terceiros para melhorar a sua experiência e os nossos
+					serviços, analisando a navegação de nosso site. Ao continuar a navegação, consideramos que
+					você aceita a sua utilização.
 				</p>
 				<button onClick={() => handleClick()} className={styles.button}>
 					Concordar e fechar
 				</button>
 			</div>
 		</div>
-	) : null;
+	) : (
+		<></>
+	);
 };
+

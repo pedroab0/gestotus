@@ -1,10 +1,11 @@
+// dependencies
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import { MdExpandMore } from "react-icons/md";
 
 interface Service {
-	id: number;
+	id: string;
 	title: string;
-	description: string;
+	description: string[];
 }
 
 export const Service = ({ id, title, description }: Service) => {
@@ -40,10 +41,15 @@ export const Service = ({ id, title, description }: Service) => {
 					fontFamily: "Montserrat, sans-serif",
 				}}
 			>
-				<Typography>
-					<div dangerouslySetInnerHTML={{ __html: description }} />
-				</Typography>
+				<div>
+					{description.map((text, i) => (
+						<p key={`${id}-${i}`} style={{ margin: 0 }}>
+							- {text}
+						</p>
+					))}
+				</div>
 			</AccordionDetails>
 		</Accordion>
 	);
 };
+

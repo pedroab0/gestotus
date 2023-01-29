@@ -1,5 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
+
 import styles from "./styles.module.scss";
+
 export const WhatsappWidget = () => {
 	return (
 		<a href="https://wa.me/5582996124520" className={styles.whatsapp}>
@@ -8,3 +10,4 @@ export const WhatsappWidget = () => {
 		</a>
 	);
 };
+

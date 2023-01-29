@@ -1,0 +1,15 @@
+query DrLicitacao {
+  drLicitacaoCategories {
+    id
+    categoryId
+    type
+    label
+  }
+  drLicitacaoLinks {
+    id
+    linkId
+    category
+    label
+    url
+  }
+}

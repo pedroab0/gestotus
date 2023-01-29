@@ -8,21 +8,14 @@ export const Hamburger = () => {
 	return (
 		<>
 			<div className={styles.container}>
-				<div
-					className={styles.box}
-					onClick={() => setClicked(clicked === false ? true : false)}
-				>
+				<div className={styles.box} onClick={() => setClicked(clicked === false ? true : false)}>
 					<div className={clicked === false ? styles.hamburger : styles.bar1} />
 					<div className={clicked === false ? styles.hamburger : styles.bar2} />
 					<div className={clicked === false ? styles.hamburger : styles.bar3} />
 				</div>
 			</div>
 
-			<nav
-				className={
-					clicked === false ? styles.responsiveMenu : styles.responsiveMenuCollapsed
-				}
-			>
+			<nav className={clicked === false ? styles.responsiveMenu : styles.responsiveMenuCollapsed}>
 				<ul>
 					<li>
 						<Link href="/" passHref replace>
@@ -45,7 +38,7 @@ export const Hamburger = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/about" passHref replace>
+						<Link href="/about-us" passHref replace>
 							<a>Sobre nós</a>
 						</Link>
 					</li>
@@ -54,3 +47,4 @@ export const Hamburger = () => {
 		</>
 	);
 };
+

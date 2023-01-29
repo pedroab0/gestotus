@@ -18,13 +18,15 @@ interface CardProps {
 }
 
 export const Card = ({ cardType, ...props }: CardProps) => {
-	if (cardType === "LG") {
-		return <CardLG {...props} />;
-	} else if (cardType === "MD") {
-		return <CardMD {...props} />;
-	} else if (cardType === "SM") {
-		return <CardSM {...props} />;
-	} else {
-		return <CardXS {...props} />;
+	switch (cardType) {
+		case "LG":
+			return <CardLG {...props} />;
+		case "MD":
+			return <CardMD {...props} />;
+		case "SM":
+			return <CardSM {...props} />;
+		default:
+			return <CardXS {...props} />;
 	}
-}
+};
+
