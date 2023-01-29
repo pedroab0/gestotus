@@ -52,6 +52,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 	<a href="https://nextjs.org/">
 		  <img alt="Acessar site do NextJS" src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
 	</a>
+	<a href="https://graphql.org/">
+		<img alt="Acessar site do GraphQL" src="https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white">
+	</a>
 	<a href="https://sass-lang.com/">
 		  <img alt="Acessar site do SASS" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 	</a>
@@ -67,9 +70,9 @@ $ yarn create next-app --typescript
 
 #### 📦 Outros pacotes
 
-- [axios](https://github.com/axios/axios) 
+- [urql](https://formidable.com/open-source/urql/)
+- [graphql-codegen](https://the-guild.dev/graphql/codegen)
 - [react-icons](https://react-icons.github.io/react-icons/)
-- [json-server](https://github.com/typicode/json-server)
 - [react-hotjar](https://github.com/abdalla/react-hotjar)
 - [date-fns](https://date-fns.org/)
 - [swiper](https://swiperjs.com/)
@@ -103,12 +106,6 @@ $ cd gestotus
 ```bash
 $ yarn install
 ```
-
-##### Inicie a fake API
-```bash
-$ yarn server
-```
-A fake API estará disponível no seu browser pelo endereço http://localhost:3333.
 
 ##### Iniciar o projeto
 ```bash
